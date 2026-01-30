@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Theme - Hải Sản Tươi Sống</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(180deg, #e8f4f8 0%, #ffffff 100%);
+            overflow-x: hidden;
+        }
+
+        .ocean-wave-bg {
+    background: linear-gradient(135deg, #7CB655 0%, #3CAFAF 100%);
+}
+
+        .ocean-wave-bg::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%23ffffff' fill-opacity='0.3' d='M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            background-size: 1440px 40px;
+            animation: wave 15s linear infinite;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 1440px 0;
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .flash-sale-timer {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+        }
+
+        .timer-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(28, 168, 221, 0.25);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+        .badge {
+    background: #3CAFAF;
+}
+
+        .hot-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            z-index: 10;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3CAFAF 0%, #1D4981 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 5px 20px rgba(28, 168, 221, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(28, 168, 221, 0.5);
+        }
+
+       
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8f7fc 0%, #d1eef7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 3px solid #3CAFAF;
+        }
+
+        .category-item:hover .category-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, #3CAFAF 0%, #1D4981 100%);
+        }
+
+        .slide-banner {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-sidebar {
+            background: white;
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .menu-item {
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .menu-item:hover {
+            background: linear-gradient(135deg, #3CAFAF 0%, #1D4981 100%);
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .partner-logo {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(28, 168, 221, 0.2);
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(28, 168, 221, 0.25);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover img {
+            transform: scale(1.08);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1D4981 0%, #0e3a61 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-size: 100% 60px;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 60px 16px 24px;
+            border-radius: 50px;
+            border: 2px solid #e0e0e0;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+            .search-box input:focus {
+                outline: none;
+                border-color: #3CAFAF;
+                box-shadow: 0 5px 20px rgba(28, 168, 221, 0.2);
+            }
+
+            .search-box button {
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: linear-gradient(135deg, #3CAFAF 0%, #1D4981      100%);
+                border: none;
+                padding: 12px 24px;
+                border-radius: 50px;
+                color: white;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+        .search-box button:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 5px 15px rgba(28, 168, 221, 0.4);
+        }
+
+        .info-badge {
+            background: white;
+            border-radius: 20px;
+            padding: 20px 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .info-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(28, 168, 221, 0.2);
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 16px;
+        }
+
+        .price-new {
+            color: #ee5a6f;
+            font-weight: 700;
+            font-size: 22px;
+        }
+
+        .pagination-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pagination-dot.active {
+            background: #3CAFAF;
+            width: 32px;
+            border-radius: 6px;
+        }
+
+        .heart-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .heart-icon:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+
+        .social-float-bar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.social-float-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-zalo {
+    background: linear-gradient(135deg, #0068FF 0%, #0180F7 100%);
+}
+
+.social-messenger {
+    background: linear-gradient(135deg, #00B2FF 0%, #006AFF 100%);
+}
+
+.social-tiktok {
+    background: linear-gradient(135deg, #000000 0%, #2B2B2B 100%);
+}
+    </style>
+</head>
+
+<body>
+<!-- Social Float Buttons -->
+<div class="social-float-bar">
+    <a href="https://zalo.me/VOTRE_NUMERO" target="_blank" class="social-float-btn social-zalo" title="Chat Zalo">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.855 1.371 5.404 3.511 7.123L4.5 22l3.916-1.738c1.122.447 2.344.738 3.584.738 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm4.5 11.5h-9v-1h9v1zm0-2.5h-9v-1h9v1zm0-2.5h-9v-1h9v1z"/>
+        </svg>
+    </a>
+    
+    <a href="https://m.me/VOTRE_PAGE_FB" target="_blank" class="social-float-btn social-messenger" title="Chat Messenger">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.145 2 11.588c0 2.996 1.494 5.668 3.833 7.417v4.495l4.33-2.376c1.155.316 2.378.476 3.837.476 5.523 0 10-4.145 10-9.588S17.523 2 12 2zm1.029 12.888l-2.559-2.73-4.997 2.73 5.496-5.834 2.623 2.73 4.933-2.73-5.496 5.834z"/>
+        </svg>
+    </a>
+    
+    <a href="https://www.tiktok.com/@VOTRE_COMPTE" target="_blank" class="social-float-btn social-tiktok" title="TikTok">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+        </svg>
+    </a>
+</div>
+
+    <!-- Top Bar -->
+    <div class="ocean-wave-bg py-3">
+        <div class="container">
+            <div class="flex justify-between items-center text-white text-sm">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span>266 Đội Cấn, P. Liễu Giai, Q. Ba Đình, Hà Nội</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                        </svg>
+                        <span>support@sapo.vn</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>❤️ Yêu thích</span>
+                        <span>|</span>
+                        <span>Hệ thống cửa hàng</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white py-6 shadow-sm">
+        <div class="container">
+            <div class="flex items-center justify-between gap-8">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-3">
+                        <img src="logo.jpg" alt="Ocean Logo" class="h-28 w-auto object-contain" />
+                    </div>
+
+                </div>
+
+
+                <!-- Search Box -->
+                <div class="search-box flex-1">
+                    <input type="text" placeholder="Tôm cua...">
+                    <button>Tìm kiếm</button>
+                </div>
+
+                <!-- Info Badges -->
+                <div class="flex items-center gap-4">
+                    <div class="info-badge">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500">Thời gian làm việc</div>
+                            <div class="font-bold text-sm">8h - 21h</div>
+                            <div class="text-xs text-gray-500">(Từ thứ 2 - Chủ Nhật)</div>
+                        </div>
+                    </div>
+                    <div class="info-badge">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z">
+                                </path>
+                                <path
+                                    d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500">Tốc độ nhanh chóng</div>
+                            <div class="font-bold text-yellow-600">≤ Giao Hàng 2H</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart & Account -->
+                <div class="flex items-center gap-4">
+                    <button class="relative">
+                        <svg class="w-7 h-7 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+                            </path>
+                        </svg>
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">0</span>
+                    </button>
+                    <button>
+                        <svg class="w-7 h-7 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Slideshow & Menu Section -->
+        <section class="py-8">
+            <div class="container">
+                <div class="grid grid-cols-12 gap-6">
+                    <!-- Sidebar Menu -->
+                    <div class="col-span-3">
+                        <div class="menu-sidebar">
+                            <h3 class="text-xl font-bold mb-4 text-gray-800">
+                                <span class="mr-2">☰</span>Danh mục sản phẩm
+                            </h3>
+                            <div class="menu-item">🦐 Tôm chiên các loại</div>
+                            <div class="menu-item">🦀 Thanh Cua Ghẹ</div>
+                            <div class="menu-item">🐟 Cá Viên Chiên</div>
+                            <div class="menu-item">🦑 Mực Chiên giòn</div>
+                            <div class="menu-item">🐚 Đồ chiên hải sản</div>
+                            <div class="menu-item">🌊 Hải sản đông lạnh</div>
+                            <div class="menu-item">✈️ Hải sản nhập khẩu</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Slideshow -->
+                    <div class="col-span-9">
+                        <div class="slide-banner">
+                            <div id="mainSlide" class="relative h-[520px] md:h-[520px]">
+                                <!-- Slide images will be added via JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner Row -->
+        <section class="py-8">
+            <div class="container">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="slide-banner fade-in-up stagger-1">
+                        <img src="banner 2..jpg" alt="Cua Tôm" class="w-full h-52 object-cover">
+                    </div>
+                    <div class="slide-banner fade-in-up stagger-2">
+                        <img src="ảnh banner 1.jpg" alt="Ghẹ Xanh" class="w-full h-52 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flash Sale Section -->
+        <section class="py-12">
+            <div class="container">
+                <div class="flash-sale-timer fade-in-up">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center gap-6">
+                            <div class="text-5xl font-black">⚡ FLASH SALE</div>
+                            <div class="text-3xl font-bold">GIỜ VÀNG GIẢM GIÁ!</div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="timer-box">
+                                <div class="text-4xl font-black" id="days">14</div>
+                                <div class="text-sm mt-1 font-semibold">Ngày</div>
+                            </div>
+                            <div class="text-5xl font-bold">:</div>
+                            <div class="timer-box">
+                                <div class="text-4xl font-black" id="hours">12</div>
+                                <div class="text-sm mt-1 font-semibold">Giờ</div>
+                            </div>
+                            <div class="text-5xl font-bold">:</div>
+                            <div class="timer-box">
+                                <div class="text-4xl font-black" id="minutes">54</div>
+                                <div class="text-sm mt-1 font-semibold">Phút</div>
+                            </div>
+                            <div class="text-5xl font-bold">:</div>
+                            <div class="timer-box">
+                                <div class="text-4xl font-black" id="seconds">51</div>
+                                <div class="text-sm mt-1 font-semibold">Giây</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="grid grid-cols-2 gap-6" id="flashSaleProducts">
+                        <!-- Products will be added via JavaScript -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex justify-center gap-3 mt-8">
+                        <div class="pagination-dot active"></div>
+                        <div class="pagination-dot"></div>
+                        <div class="pagination-dot"></div>
+                        <div class="pagination-dot"></div>
+                        <div class="pagination-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="py-12">
+            <div class="container">
+                <h2 class="text-4xl font-bold text-center mb-12">Danh mục sản phẩm</h2>
+                <div class="grid grid-cols-5 gap-8">
+                    <div class="category-item text-center cursor-pointer fade-in-up stagger-1">
+                        <div class="category-icon">
+                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                            </svg>
+                        </div>
+                        <div class="font-semibold text-gray-800">Hải sản đông lạnh</div>
+                    </div>
+                    <div class="category-item text-center cursor-pointer fade-in-up stagger-2">
+                        <div class="category-icon">
+                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6z" />
+                            </svg>
+                        </div>
+                        <div class="font-semibold text-gray-800">100% tươi sống</div>
+                    </div>
+                    <div class="category-item text-center cursor-pointer fade-in-up stagger-3">
+                        <div class="category-icon">
+                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3z" />
+                            </svg>
+                        </div>
+                        <div class="font-semibold text-gray-800">Hải sản nhập khẩu</div>
+                    </div>
+                    <div class="category-item text-center cursor-pointer fade-in-up stagger-4">
+                        <div class="category-icon">
+                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="font-semibold text-gray-800">Cá hồi</div>
+                    </div>
+                    <div class="category-item text-center cursor-pointer fade-in-up stagger-1">
+                        <div class="category-icon">
+                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                <path fill-rule="evenodd"
+                                    d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="font-semibold text-gray-800">Hàu sữa</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals -->
+        <section class="py-12 bg-white">
+            <div class="container">
+                <h2 class="text-4xl font-bold text-center mb-12">Sản Phẩm mới về</h2>
+                <div class="grid grid-cols-5 gap-6" id="newProducts">
+                    <!-- Products will be added via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Full Width Banner -->
+        <section class="py-12">
+            <div class="container px-0">
+                <div class="relative h-80 overflow-hidden rounded-3xl">
+                    <img src="banner 4.jpg" alt="Banner" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center">
+                        <div class="text-white px-20">
+                            <h3 class="text-5xl font-black mb-4">ĐẠI TIỆC THỰC PHẨM</h3>
+                            <h4 class="text-6xl font-black text-yellow-400 mb-6">Thanh Food Phan Thiết</h4>
+                            <div class="text-3xl font-bold">CHỈ CÒN <span
+                                    class="text-yellow-400 text-5xl">489K</span>/Lô</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="py-12">
+            <div class="container">
+                <h2 class="text-4xl font-bold text-center mb-12">Cẩm nang ẩm thực</h2>
+                <div class="grid grid-cols-3 gap-8" id="newsSection">
+                    <!-- News cards will be added via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section class="py-12 bg-white">
+            <div class="container">
+                <h2 class="text-4xl font-bold text-center mb-12">Đại lý ủy quyền</h2>
+                <div class="grid grid-cols-5 gap-6">
+                    <div class="partner-logo fade-in-up stagger-1">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-700">grano</div>
+                            <div class="text-sm text-gray-600">FOODS</div>
+                        </div>
+                    </div>
+                    <div class="partner-logo fade-in-up stagger-2">
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-orange-500">foodic</div>
+                        </div>
+                    </div>
+                    <div class="partner-logo fade-in-up stagger-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-teal-600 rounded-full"></div>
+                            <div class="w-8 h-8 bg-amber-500 rounded-full"></div>
+                            <div class="w-8 h-8 bg-green-600 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="partner-logo fade-in-up stagger-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-black text-gray-800">good food</div>
+                            <div class="text-xs text-gray-600">TAGLINE GOES HERE</div>
+                        </div>
+                    </div>
+                    <div class="partner-logo fade-in-up stagger-1">
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-orange-500">Foody's</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pt-32 pb-8">
+
+        <div class="container">
+            <div class="grid grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Thông tin công ty</h3>
+                    <p class="mb-3 text-sm opacity-90">Mã số thuế: 0123456789</p>
+                    <p class="mb-3 text-sm opacity-90">Phan thiết - Thanh Food</p>
+                    <p class="mb-3 flex items-start gap-2 text-sm opacity-90">
+                        <svg class="w-4 h-4 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Thành phố Phan Thiết, Bình Thuận, Việt Nam
+                    </p>
+                    <p class="mb-3 flex items-center gap-2 text-sm opacity-90">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
+                            </path>
+                        </svg>
+                        1900 6750
+                    </p>
+                    <p class="flex items-center gap-2 text-sm opacity-90">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                        </svg>
+                        vinasofware@gmail.vn
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Về chúng tôi</h3>
+                    <ul class="space-y-3 text-sm opacity-90">
+                        <li><a href="#" class="hover:text-yellow-300 transition">Trang chủ</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Giới thiệu</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Sản phẩm</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Cẩm nang ẩm thực</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Chính sách</h3>
+                    <ul class="space-y-3 text-sm opacity-90">
+                        <li><a href="#" class="hover:text-yellow-300 transition">Chính sách đổi trả</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Chính sách mua hàng</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Chính sách bán hàng</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Chính sách giao hàng</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Bảo mật thông tin cá nhân</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Hình thức thanh toán</h3>
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="bg-white/20 p-3 rounded-lg flex items-center justify-center">
+                            <span class="text-2xl">💵</span>
+                        </div>
+                        <div class="bg-white/20 p-3 rounded-lg flex items-center justify-center">
+                            <span class="text-2xl">💳</span>
+                        </div>
+                        <div class="bg-white/20 p-3 rounded-lg flex items-center justify-center">
+                            <span class="text-sm font-bold">VISA</span>
+                        </div>
+                        <div class="bg-white/20 p-3 rounded-lg flex items-center justify-center">
+                            <span class="text-sm font-bold">MOMO</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Liên kết mạng xã hội</h3>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-6 text-center text-sm opacity-75">
+                <p>&copy; 2026 Ocean Theme - Cá Viên Chiên Chất Lượng. Thiết kế bởi VNS(vinasoftware)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Flash Sale Countdown
+        function updateCountdown() {
+            const days = document.getElementById('days');
+            const hours = document.getElementById('hours');
+            const minutes = document.getElementById('minutes');
+            const seconds = document.getElementById('seconds');
+    
+            setInterval(() => {
+                let d = parseInt(days.textContent);
+                let h = parseInt(hours.textContent);
+                let m = parseInt(minutes.textContent);
+                let s = parseInt(seconds.textContent);
+    
+                s--;
+                if (s < 0) {
+                    s = 59;
+                    m--;
+                    if (m < 0) {
+                        m = 59;
+                        h--;
+                        if (h < 0) {
+                            h = 23;
+                            d--;
+                        }
+                    }
+                }
+    
+                days.textContent = d.toString().padStart(2, '0');
+                hours.textContent = h.toString().padStart(2, '0');
+                minutes.textContent = m.toString().padStart(2, '0');
+                seconds.textContent = s.toString().padStart(2, '0');
+            }, 1000);
+        }
+    
+        // Flash Sale Products
+        const flashProducts = [
+            {
+                name: 'Cá Hồi Phi Lê Tươi Nguyên Con',
+                origin: 'Phan Thiet',
+                price: '1.350.000đ',
+                oldPrice: '1.600.000đ',
+                sold: 147,
+                discount: '-16%',
+                image: './ho lo.jpg',
+                hot: true
+            },
+            {
+                name: 'Thanh Phô Mai',
+                origin: 'Việt Nam',
+                price: '330.000đ',
+                oldPrice: '400.000đ',
+                sold: 162,
+                discount: '-18%',
+                image: './phomaique.jpg',
+                hot: true
+            }
+        ];
+    
+        const flashSaleContainer = document.getElementById('flashSaleProducts');
+        flashProducts.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card fade-in-up';
+            card.style.cursor = 'pointer'; // ← THÊM: Con trỏ chuột dạng pointer
+            card.onclick = () => window.location.href = 'product-detail.html'; // ← THÊM: Click chuyển trang
+            card.innerHTML = `
+                <div class="relative">
+                    ${product.discount ? `<div class="badge">${product.discount}</div>` : ''}
+                    ${product.hot ? '<div class="hot-badge">BÁN CHẠY</div>' : ''}
+                    <div class="heart-icon">❤️</div>
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-lg mb-2 text-gray-800">${product.name}</h3>
+                    <p class="text-sm text-gray-500 mb-3">Xuất xứ: ${product.origin}</p>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="price-new">${product.price}</span>
+                        <span class="price-old">${product.oldPrice}</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Đã bán ${product.sold}</span>
+                        <button class="btn-primary">THÊM VÀO GIỎ HÀNG</button>
+                    </div>
+                </div>
+            `;
+            flashSaleContainer.appendChild(card);
+        });
+    
+        // New Products
+        const newProducts = [
+            {
+                name: 'Xúc xíc Đức vị song khói',
+                origin: 'Việt Nam',
+                price: '269.000đ',
+                image: './sanpham1.jpg'
+            },
+            {
+                name: 'Xúc xíc viên',
+                origin: 'Việt Nam',
+                price: '195.000đ',
+                image: './sanpham2.jpg'
+            },
+            {
+                name: 'Cá viên chiên Thanh Food',
+                origin: 'Việt Nam',
+                price: '590.000đ',
+                image: './sanpham3.jpg'
+            },
+            {
+                name: 'Thanh cua',
+                origin: 'Thanh Food',
+                price: '1.350.000đ',
+                oldPrice: '1.600.000đ',
+                discount: '-16%',
+                image: './sanpham4.jpg'
+            },
+            {
+                name: 'Phô Mai Viên',
+                origin: 'Việt Nam',
+                price: '175.000đ',
+                image: './sanpham5.jpg'
+            },
+            {
+                name: 'Xúc xíc Đức vị song khói',
+                origin: 'Việt Nam',
+                price: '269.000đ',
+                image: './sanpham6.jpg'
+            },
+            {
+                name: 'Xúc xíc viên',
+                origin: 'Việt Nam',
+                price: '195.000đ',
+                image: './sanpham7.jpg'
+            },
+            {
+                name: 'Nem ran',
+                origin: 'Việt Nam',
+                price: '590.000đ',
+                image: './sanpham8.jpg'
+            },
+            {
+                name: 'Thanh cua',
+                origin: 'Thanh Food',
+                price: '1.350.000đ',
+                oldPrice: '1.600.000đ',
+                discount: '-16%',
+                image: './sanpham9.jpg'
+            },
+            {
+                name: 'Phô Mai Viên',
+                origin: 'Việt Nam',
+                price: '175.000đ',
+                image: './sanpham10.jpg'
+            },
+            {
+                name: 'Xúc xíc Đức vị song khói',
+                origin: 'Việt Nam',
+                price: '269.000đ',
+                image: './sanpham11.jpg'
+            },
+            {
+                name: 'Xúc xíc viên',
+                origin: 'Việt Nam',
+                price: '195.000đ',
+                image: './sanpham12.jpg'
+            },
+            {
+                name: 'Cá viên chiên Thanh Food',
+                origin: 'Việt Nam',
+                price: '590.000đ',
+                image: './sanpham13.jpg'
+            },
+            {
+                name: 'Thanh cua',
+                origin: 'Thanh Food',
+                price: '1.350.000đ',
+                oldPrice: '1.600.000đ',
+                discount: '-16%',
+                image: './sanpham14.jpg'
+            },
+            {
+                name: 'Phô Mai Viên',
+                origin: 'Việt Nam',
+                price: '175.000đ',
+                image: './sanpham15.jpg'
+            }
+        ];
+    
+        const newProductsContainer = document.getElementById('newProducts');
+        newProducts.forEach((product, index) => {
+            const card = document.createElement('div');
+            card.className = `product-card fade-in-up stagger-${(index % 4) + 1}`;
+            card.style.cursor = 'pointer'; // ← THÊM: Con trỏ chuột dạng pointer
+            card.onclick = () => window.location.href = 'product-detail.html'; // ← THÊM: Click chuyển trang
+            card.innerHTML = `
+                <div class="relative">
+                    ${product.discount ? `<div class="badge">${product.discount}</div>` : ''}
+                    <div class="heart-icon">❤️</div>
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">${product.name}</h3>
+                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: ${product.origin}</p>
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="price-new">${product.price}</span>
+                        ${product.oldPrice ? `<span class="price-old">${product.oldPrice}</span>` : ''}
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
+                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                        <button class="flex-1 btn-primary text-sm py-2" onclick="event.stopPropagation()">
+                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            `;
+            newProductsContainer.appendChild(card);
+        });
+    
+        // News
+        const news = [
+            {
+                title: 'Cách chế biến cá viên đúng chuẩn vị ngon',
+                date: '15/02/2025',
+                excerpt: 'Chúng ta sẽ bắt đầu ngăm nước sao cho cá viên tưới ngon, để ráo nước...',
+                image: './sanpham6.jpg'
+            },
+            {
+                title: 'Tôm hùm Nova Scotia Canada: lợi ích sức khỏe',
+                date: '15/02/2025',
+                excerpt: 'Thành phần dinh dưỡng của tôm hùm Nova Scotia Canada Tôm hùm Nova Scot...',
+                image: './sanpham7.jpg'
+            },
+            {
+                title: 'Chi Tiết Công Thức Vẹm Xanh Nướng Mỡ Hành',
+                date: '10/12/2024',
+                excerpt: 'Các nguyên liệu cần chuẩn bị Vẹm nướng mỡ hành là sự kết hợp hoàn hảo giữa...',
+                image: './sanpham8.jpg'
+            },
+        ];
+    
+        const newsContainer = document.getElementById('newsSection');
+        news.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = `news-card fade-in-up stagger-${index + 1}`;
+            card.innerHTML = `
+                <div class="overflow-hidden">
+                    <img src="${item.image}" alt="${item.title}">
+                </div>
+                <div class="p-6">
+                    <div class="text-sm text-gray-500 mb-3">📅 ${item.date}</div>
+                    <h3 class="font-bold text-lg mb-3 text-gray-800">${item.title}</h3>
+                    <p class="text-gray-600 text-sm mb-4">${item.excerpt}</p>
+                    <a href="#" class="text-cyan-600 font-semibold text-sm hover:text-cyan-700 transition">Đọc thêm →</a>
+                </div>
+            `;
+            newsContainer.appendChild(card);
+        });
+    
+        // Slideshow
+        const slides = [
+            './banner_cavien.jpg',
+            './banner_cavien 2.jpg',
+            './banner_xúc xích.jpg'
+        ];
+    
+        let currentSlide = 0
+        const slideContainer = document.getElementById('mainSlide');
+    
+        function showSlide(index) {
+            slideContainer.style.backgroundImage = `url(${slides[index]})`;
+            slideContainer.style.backgroundSize = 'cover';
+            slideContainer.style.backgroundPosition = 'center';
+            slideContainer.style.transition = 'background-image 0.5s ease';
+        }
+    
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+    
+        showSlide(0);
+        setInterval(nextSlide, 4000);
+    
+        // Initialize countdown
+        updateCountdown();
+    
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+    
+</body>

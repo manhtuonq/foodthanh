@@ -1,11 +1,13 @@
-<html lang="vi"><head>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1400, initial-scale=0.5, user-scalable=yes">
-    <title>Thanh Food- Cá Viên Đông Lạnh </title>
+    <title>Thanh Food - Cá Viên Đông Lạnh</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -37,13 +39,8 @@
         }
 
         @keyframes wave {
-            0% {
-                background-position: 0 0;
-            }
-
-            100% {
-                background-position: 1440px 0;
-            }
+            0% { background-position: 0 0; }
+            100% { background-position: 1440px 0; }
         }
 
         .container {
@@ -67,6 +64,7 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            cursor: pointer;
         }
 
         .product-card:hover {
@@ -339,7 +337,6 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -350,21 +347,10 @@
             animation: fadeInUp 0.6s ease forwards;
         }
 
-        .stagger-1 {
-            animation-delay: 0.1s;
-        }
-
-        .stagger-2 {
-            animation-delay: 0.2s;
-        }
-
-        .stagger-3 {
-            animation-delay: 0.3s;
-        }
-
-        .stagger-4 {
-            animation-delay: 0.4s;
-        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
 
         .social-float-bar {
             position: fixed;
@@ -406,7 +392,7 @@
             background: linear-gradient(135deg, #000000 0%, #2B2B2B 100%);
         }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.col-span-3{grid-column:span 3 / span 3}.col-span-9{grid-column:span 9 / span 9}.mx-auto{margin-left:auto;margin-right:auto}.mb-12{margin-bottom:3rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-8{margin-top:2rem}.mb-2{margin-bottom:0.5rem}.flex{display:flex}.grid{display:grid}.h-10{height:2.5rem}.h-12{height:3rem}.h-28{height:7rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-52{height:13rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-80{height:20rem}.h-\[520px\]{height:520px}.h-full{height:100%}.w-10{width:2.5rem}.w-12{width:3rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-auto{width:auto}.w-full{width:100%}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.cursor-pointer{cursor:pointer}.grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.border-t{border-top-width:1px}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-teal-600{--tw-bg-opacity:1;background-color:rgb(13 148 136 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-yellow-100{--tw-bg-opacity:1;background-color:rgb(254 249 195 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-black\/50{--tw-gradient-from:rgb(0 0 0 / 0.5) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-0{padding-left:0px;padding-right:0px}.px-20{padding-left:5rem;padding-right:5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pb-8{padding-bottom:2rem}.pt-32{padding-top:8rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-semibold{font-weight:600}.text-cyan-600{--tw-text-opacity:1;color:rgb(8 145 178 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.text-yellow-600{--tw-text-opacity:1;color:rgb(202 138 4 / var(--tw-text-opacity, 1))}.opacity-75{opacity:0.75}.opacity-90{opacity:0.9}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-white\/30:hover{background-color:rgb(255 255 255 / 0.3)}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:text-yellow-300:hover{--tw-text-opacity:1;color:rgb(253 224 71 / var(--tw-text-opacity, 1))}.hover\:text-cyan-700:hover{--tw-text-opacity:1;color:rgb(14 116 144 / var(--tw-text-opacity, 1))}</style></head>
+</head>
 
 <body>
     <!-- Social Float Buttons -->
@@ -490,10 +476,8 @@
                     <div class="info-badge">
                         <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
                             <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z">
-                                </path>
-                                <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z">
-                                </path>
+                                <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                                <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path>
                             </svg>
                         </div>
                         <div>
@@ -503,8 +487,7 @@
                     </div>
                     <button class="btn-contact">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
-                            </path>
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                         </svg>
                         Liên hệ ngay
                     </button>
@@ -538,8 +521,7 @@
                     <!-- Main Slideshow -->
                     <div class="col-span-9">
                         <div class="slide-banner">
-                            <div id="mainSlide" class="relative h-[520px]" style="background-image: url(&quot;./banner_cavien.jpg&quot;); background-size: cover; background-position: center center; transition: background-image 0.5s;">
-                                <!-- Slide images will be added via JavaScript -->
+                            <div id="mainSlide" class="relative h-[520px]" style="background-image: url('./banner_cavien.jpg'); background-size: cover; background-position: center; transition: background-image 0.5s;">
                             </div>
                         </div>
                     </div>
@@ -572,43 +554,7 @@
                     </div>
 
                     <!-- Products Grid -->
-                    <div class="grid grid-cols-2 gap-6" id="featuredProducts">
-                        <!-- Products will be added via JavaScript -->
-                    <div class="product-card fade-in-up" style="cursor: pointer;">
-                <div class="relative">
-                    <div class="hot-badge">BÁN CHẠY</div>
-                    <img src="./ho lo.jpg" alt="Cá Hồi Phi Lê Tươi Nguyên Con">
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-lg mb-2 text-gray-800">Cá Hồi Phi Lê Tươi Nguyên Con</h3>
-                    <p class="text-sm text-gray-500 mb-3">Xuất xứ: Phan Thiet</p>
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="price-new">59.000đ</span>
-                        <span class="price-old">69.000đ</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">Đã bán 147</span>
-                        <button class="btn-primary" onclick="event.stopPropagation()">Mua Ngay</button>
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up" style="cursor: pointer;">
-                <div class="relative">
-                    <div class="hot-badge">BÁN CHẠY</div>
-                    <img src="./phomaique.jpg" alt="Thanh Phô Mai">
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-lg mb-2 text-gray-800">Thanh Phô Mai</h3>
-                    <p class="text-sm text-gray-500 mb-3">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="price-new">49.000đ</span>
-                        <span class="price-old">59.000đ</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">Đã bán 162</span>
-                        <button class="btn-primary" onclick="event.stopPropagation()">Mua Ngay</button>
-                    </div>
-                </div>
-            </div></div>
+                    <div class="grid grid-cols-2 gap-6" id="featuredProducts"></div>
 
                     <!-- Pagination -->
                     <div class="flex justify-center gap-3 mt-8">
@@ -676,337 +622,7 @@
         <section class="py-12 bg-white">
             <div class="container">
                 <h2 class="text-4xl font-bold text-center mb-12">Sản Phẩm mới về</h2>
-                <div class="grid grid-cols-5 gap-6" id="newProducts">
-                    <!-- Products will be added via JavaScript -->
-                <div class="product-card fade-in-up stagger-1" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham1.jpg" alt="Xúc xíc Đức vị song khói">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Xúc xíc Đức vị song khói</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">65.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-2" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham2.jpg" alt="Xúc xíc viên">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Xúc xíc viên</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">45.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-3" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham3.jpg" alt="Cá viên chiên Thanh Food">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Cá viên chiên Thanh Food</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">55.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-4" style="cursor: pointer;">
-                <div class="relative">
-                    <img src="./sanpham4.jpg" alt="Thanh cua">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Thanh cua</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Thanh Food</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">59.000đ</span>
-                        <span class="price-old">69.000đ</span>
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-1" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham5.jpg" alt="Phô Mai Viên">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Phô Mai Viên</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">39.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-2" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham6.jpg" alt="Xúc xíc Đức vị song khói">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Xúc xíc Đức vị song khói</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">65.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-3" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham7.jpg" alt="Xúc xíc viên">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Xúc xíc viên</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">45.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-4" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham8.jpg" alt="Nem ran">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Nem ran</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">52.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-1" style="cursor: pointer;">
-                <div class="relative">
-                    <img src="./sanpham9.jpg" alt="Thanh cua">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Thanh cua</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Thanh Food</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">59.000đ</span>
-                        <span class="price-old">69.000đ</span>
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-2" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham10.jpg" alt="Phô Mai Viên">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Phô Mai Viên</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">39.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-3" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham11.jpg" alt="Xúc xíc Đức vị song khói">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Xúc xíc Đức vị song khói</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">65.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-4" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham12.jpg" alt="Xúc xíc viên">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Xúc xíc viên</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">45.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-1" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham13.jpg" alt="Cá viên chiên Thanh Food">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Cá viên chiên Thanh Food</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">55.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="product-card fade-in-up stagger-2" style="cursor: pointer;">
-                <div class="relative">
-                    <img src="./sanpham14.jpg" alt="Thanh cua">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Thanh cua</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Thanh Food</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">59.000đ</span>
-                        <span class="price-old">69.000đ</span>
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div><div class="product-card fade-in-up stagger-3" style="cursor: pointer;">
-                <div class="relative">
-                    
-                    <img src="./sanpham15.jpg" alt="Phô Mai Viên">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">Phô Mai Viên</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: Việt Nam</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">39.000đ</span>
-                        
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        
-                    </div>
-                </div>
-            </div></div>
+                <div class="grid grid-cols-5 gap-6" id="newProducts"></div>
             </div>
         </section>
 
@@ -1030,39 +646,7 @@
         <section class="py-12">
             <div class="container">
                 <h2 class="text-4xl font-bold text-center mb-12">Cẩm nang ẩm thực</h2>
-                <div class="grid grid-cols-3 gap-8" id="newsSection">
-                    <!-- News cards will be added via JavaScript -->
-                <div class="news-card fade-in-up stagger-1">
-                <div class="overflow-hidden">
-                    <img src="./sanpham6.jpg" alt="Cách chế biến cá viên đúng chuẩn vị ngon">
-                </div>
-                <div class="p-6">
-                    <div class="text-sm text-gray-500 mb-3">📅 15/02/2025</div>
-                    <h3 class="font-bold text-lg mb-3 text-gray-800">Cách chế biến cá viên đúng chuẩn vị ngon</h3>
-                    <p class="text-gray-600 text-sm mb-4">Chúng ta sẽ bắt đầu ngăm nước sao cho cá viên tưới ngon, để ráo nước...</p>
-                    <a href="#" class="text-cyan-600 font-semibold text-sm hover:text-cyan-700 transition">Đọc thêm →</a>
-                </div>
-            </div><div class="news-card fade-in-up stagger-2">
-                <div class="overflow-hidden">
-                    <img src="./sanpham7.jpg" alt="Tôm hùm Nova Scotia Canada: lợi ích sức khỏe">
-                </div>
-                <div class="p-6">
-                    <div class="text-sm text-gray-500 mb-3">📅 15/02/2025</div>
-                    <h3 class="font-bold text-lg mb-3 text-gray-800">Tôm hùm Nova Scotia Canada: lợi ích sức khỏe</h3>
-                    <p class="text-gray-600 text-sm mb-4">Thành phần dinh dưỡng của tôm hùm Nova Scotia Canada Tôm hùm Nova Scot...</p>
-                    <a href="#" class="text-cyan-600 font-semibold text-sm hover:text-cyan-700 transition">Đọc thêm →</a>
-                </div>
-            </div><div class="news-card fade-in-up stagger-3">
-                <div class="overflow-hidden">
-                    <img src="./sanpham8.jpg" alt="Chi Tiết Công Thức Vẹm Xanh Nướng Mỡ Hành">
-                </div>
-                <div class="p-6">
-                    <div class="text-sm text-gray-500 mb-3">📅 10/12/2024</div>
-                    <h3 class="font-bold text-lg mb-3 text-gray-800">Chi Tiết Công Thức Vẹm Xanh Nướng Mỡ Hành</h3>
-                    <p class="text-gray-600 text-sm mb-4">Các nguyên liệu cần chuẩn bị Vẹm nướng mỡ hành là sự kết hợp hoàn hảo giữa...</p>
-                    <a href="#" class="text-cyan-600 font-semibold text-sm hover:text-cyan-700 transition">Đọc thêm →</a>
-                </div>
-            </div></div>
+                <div class="grid grid-cols-3 gap-8" id="newsSection"></div>
             </div>
         </section>
 
@@ -1121,8 +705,7 @@
                     </p>
                     <p class="mb-3 flex items-center gap-2 text-sm opacity-90">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z">
-                            </path>
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                         </svg>
                         1900 6750
                     </p>
@@ -1201,185 +784,277 @@
     </footer>
 
     <script>
-        // Featured Products (replacing Flash Sale)
-        const featuredProducts = [
-            {
-                name: 'Cá Hồi Phi Lê Tươi Nguyên Con',
-                origin: 'Phan Thiet',
-                price: '1.350.000đ',
-                oldPrice: '1.600.000đ',
-                sold: 147,
-                image: './ho lo.jpg',
-                hot: true
-            },
-            {
-                name: 'Thanh Phô Mai',
-                origin: 'Việt Nam',
-                price: '330.000đ',
-                oldPrice: '400.000đ',
-                sold: 162,
-                image: './phomaique.jpg',
-                hot: true
-            }
-        ];
+        // Product data - Dữ liệu sản phẩm với ID duy nhất
+        const productsData = {
+            featured: [
+                {
+                    id: 'ca-hoi-phi-le',
+                    name: 'Cá Hồi Phi Lê Tươi Nguyên Con',
+                    origin: 'Phan Thiet',
+                    price: '1.350.000đ',
+                    oldPrice: '1.600.000đ',
+                    sold: 147,
+                    image: './ho lo.jpg',
+                    hot: true,
+                    discount: '-16%',
+                    description: 'Cá hồi phi lê tươi nguyên con được chọn lọc kỹ càng từ những nguồn cá hồi chất lượng cao nhất.',
+                    weight: '1kg - 1.5kg/con',
+                    shelf_life: '6 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'thanh-pho-mai',
+                    name: 'Thanh Phô Mai',
+                    origin: 'Việt Nam',
+                    price: '330.000đ',
+                    oldPrice: '400.000đ',
+                    sold: 162,
+                    image: './phomaique.jpg',
+                    hot: true,
+                    discount: '-17%',
+                    description: 'Thanh phô mai thơm ngon, béo ngậy, chất lượng cao.',
+                    weight: '500g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn mát tủ lạnh 0-4°C'
+                }
+            ],
+            new: [
+                {
+                    id: 'xuc-xich-duc-1',
+                    name: 'Xúc xíc Đức vị song khói',
+                    origin: 'Việt Nam',
+                    price: '65.000đ',
+                    image: './sanpham1.jpg',
+                    description: 'Xúc xích Đức vị song khói thơm ngon đặc biệt.',
+                    weight: '250g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'xuc-xich-vien-1',
+                    name: 'Xúc xíc viên',
+                    origin: 'Việt Nam',
+                    price: '45.000đ',
+                    image: './sanpham2.jpg',
+                    description: 'Xúc xích viên tròn đều, thơm ngon.',
+                    weight: '200g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'ca-vien-chien',
+                    name: 'Cá viên chiên Thanh Food',
+                    origin: 'Việt Nam',
+                    price: '55.000đ',
+                    image: './sanpham3.jpg',
+                    description: 'Cá viên chiên giòn tan, thơm ngon.',
+                    weight: '300g/gói',
+                    shelf_life: '4 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'thanh-cua-1',
+                    name: 'Thanh cua',
+                    origin: 'Thanh Food',
+                    price: '59.000đ',
+                    oldPrice: '69.000đ',
+                    image: './sanpham4.jpg',
+                    description: 'Thanh cua thơm ngon, chất lượng cao.',
+                    weight: '250g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'pho-mai-vien-1',
+                    name: 'Phô Mai Viên',
+                    origin: 'Việt Nam',
+                    price: '39.000đ',
+                    image: './sanpham5.jpg',
+                    description: 'Phô mai viên béo ngậy thơm ngon.',
+                    weight: '200g/gói',
+                    shelf_life: '2 tháng',
+                    storage: 'Ngăn mát tủ lạnh 0-4°C'
+                },
+                {
+                    id: 'xuc-xich-duc-2',
+                    name: 'Xúc xíc Đức vị song khói',
+                    origin: 'Việt Nam',
+                    price: '65.000đ',
+                    image: './sanpham6.jpg',
+                    description: 'Xúc xích Đức vị song khói thơm ngon đặc biệt.',
+                    weight: '250g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'xuc-xich-vien-2',
+                    name: 'Xúc xíc viên',
+                    origin: 'Việt Nam',
+                    price: '45.000đ',
+                    image: './sanpham7.jpg',
+                    description: 'Xúc xích viên tròn đều, thơm ngon.',
+                    weight: '200g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'nem-ran',
+                    name: 'Nem ran',
+                    origin: 'Việt Nam',
+                    price: '52.000đ',
+                    image: './sanpham8.jpg',
+                    description: 'Nem ran giòn rụm, thơm ngon.',
+                    weight: '300g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'thanh-cua-2',
+                    name: 'Thanh cua',
+                    origin: 'Thanh Food',
+                    price: '59.000đ',
+                    oldPrice: '69.000đ',
+                    image: './sanpham9.jpg',
+                    description: 'Thanh cua thơm ngon, chất lượng cao.',
+                    weight: '250g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'pho-mai-vien-2',
+                    name: 'Phô Mai Viên',
+                    origin: 'Việt Nam',
+                    price: '39.000đ',
+                    image: './sanpham10.jpg',
+                    description: 'Phô mai viên béo ngậy thơm ngon.',
+                    weight: '200g/gói',
+                    shelf_life: '2 tháng',
+                    storage: 'Ngăn mát tủ lạnh 0-4°C'
+                },
+                {
+                    id: 'xuc-xich-duc-3',
+                    name: 'Xúc xíc Đức vị song khói',
+                    origin: 'Việt Nam',
+                    price: '65.000đ',
+                    image: './sanpham11.jpg',
+                    description: 'Xúc xích Đức vị song khói thơm ngon đặc biệt.',
+                    weight: '250g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'xuc-xich-vien-3',
+                    name: 'Xúc xíc viên',
+                    origin: 'Việt Nam',
+                    price: '45.000đ',
+                    image: './sanpham12.jpg',
+                    description: 'Xúc xích viên tròn đều, thơm ngon.',
+                    weight: '200g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'ca-vien-chien-2',
+                    name: 'Cá viên chiên Thanh Food',
+                    origin: 'Việt Nam',
+                    price: '55.000đ',
+                    image: './sanpham13.jpg',
+                    description: 'Cá viên chiên giòn tan, thơm ngon.',
+                    weight: '300g/gói',
+                    shelf_life: '4 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'thanh-cua-3',
+                    name: 'Thanh cua',
+                    origin: 'Thanh Food',
+                    price: '59.000đ',
+                    oldPrice: '69.000đ',
+                    image: './sanpham14.jpg',
+                    description: 'Thanh cua thơm ngon, chất lượng cao.',
+                    weight: '250g/gói',
+                    shelf_life: '3 tháng',
+                    storage: 'Ngăn đá tủ lạnh -18°C'
+                },
+                {
+                    id: 'pho-mai-vien-3',
+                    name: 'Phô Mai Viên',
+                    origin: 'Việt Nam',
+                    price: '39.000đ',
+                    image: './sanpham15.jpg',
+                    description: 'Phô mai viên béo ngậy thơm ngon.',
+                    weight: '200g/gói',
+                    shelf_life: '2 tháng',
+                    storage: 'Ngăn mát tủ lạnh 0-4°C'
+                }
+            ]
+        };
 
+        // Hàm tạo URL với product ID
+        function getProductDetailUrl(productId) {
+            return `product-detail.html?id=${productId}`;
+        }
+
+        // Hàm tạo HTML cho sản phẩm nổi bật
+        function createFeaturedProductCard(product) {
+            return `
+                <div class="product-card fade-in-up" onclick="window.location.href='${getProductDetailUrl(product.id)}'">
+                    <div class="relative">
+                        ${product.hot ? '<div class="hot-badge">BÁN CHẠY</div>' : ''}
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">${product.name}</h3>
+                        <p class="text-sm text-gray-500 mb-3">Xuất xứ: ${product.origin}</p>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="price-new">${product.price}</span>
+                            ${product.oldPrice ? `<span class="price-old">${product.oldPrice}</span>` : ''}
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Đã bán ${product.sold}</span>
+                            <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='${getProductDetailUrl(product.id)}'">Xem Chi Tiết</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Hàm tạo HTML cho sản phẩm mới
+        function createNewProductCard(product, index) {
+            return `
+                <div class="product-card fade-in-up stagger-${(index % 4) + 1}" onclick="window.location.href='${getProductDetailUrl(product.id)}'">
+                    <div class="relative">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">${product.name}</h3>
+                        <p class="text-xs text-gray-500 mb-2">Xuất xứ: ${product.origin}</p>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="price-new">${product.price}</span>
+                            ${product.oldPrice ? `<span class="price-old">${product.oldPrice}</span>` : ''}
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation(); window.location.href='${getProductDetailUrl(product.id)}'">
+                                <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render sản phẩm nổi bật
         const featuredContainer = document.getElementById('featuredProducts');
-        featuredProducts.forEach(product => {
-            const card = document.createElement('div');
-            card.className = 'product-card fade-in-up';
-            card.style.cursor = 'pointer';
-            card.onclick = () => window.location.href = 'product-detail.html';
-            card.innerHTML = `
-                <div class="relative">
-                    ${product.discount ? `<div class="badge">${product.discount}</div>` : ''}
-                    ${product.hot ? '<div class="hot-badge">BÁN CHẠY</div>' : ''}
-                    <img src="${product.image}" alt="${product.name}">
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-lg mb-2 text-gray-800">${product.name}</h3>
-                    <p class="text-sm text-gray-500 mb-3">Xuất xứ: ${product.origin}</p>
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="price-new">${product.price}</span>
-                        <span class="price-old">${product.oldPrice}</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">Đã bán ${product.sold}</span>
-                        <button class="btn-primary" onclick="event.stopPropagation()">Mua Ngay</button>
-                    </div>
-                </div>
-            `;
-            featuredContainer.appendChild(card);
-        });
+        featuredContainer.innerHTML = productsData.featured.map(product => createFeaturedProductCard(product)).join('');
 
-        // New Products
-        const newProducts = [
-        {
-                name: 'Xúc xíc Đức vị song khói',
-                origin: 'Việt Nam',
-                price: '65.000đ',
-                image: './sanpham1.jpg'
-            },
-            {
-                name: 'Xúc xíc viên',
-                origin: 'Việt Nam',
-                price: '45.000đ',
-                image: './sanpham2.jpg'
-            },
-            {
-                name: 'Cá viên chiên Thanh Food',
-                origin: 'Việt Nam',
-                price: '55.000đ',
-                image: './sanpham3.jpg'
-            },
-            {
-                name: 'Thanh cua',
-                origin: 'Thanh Food',
-                price: '59.000đ',
-                oldPrice: '69.000đ',
-                image: './sanpham4.jpg'
-            },
-            {
-                name: 'Phô Mai Viên',
-                origin: 'Việt Nam',
-                price: '39.000đ',
-                image: './sanpham5.jpg'
-            },
-            {
-                name: 'Xúc xíc Đức vị song khói',
-                origin: 'Việt Nam',
-                price: '65.000đ',
-                image: './sanpham6.jpg'
-            },
-            {
-                name: 'Xúc xíc viên',
-                origin: 'Việt Nam',
-                price: '45.000đ',
-                image: './sanpham7.jpg'
-            },
-            {
-                name: 'Nem ran',
-                origin: 'Việt Nam',
-                price: '52.000đ',
-                image: './sanpham8.jpg'
-            },
-            {
-                name: 'Thanh cua',
-                origin: 'Thanh Food',
-                price: '59.000đ',
-                oldPrice: '69.000đ',
-                image: './sanpham9.jpg'
-            },
-            {
-                name: 'Phô Mai Viên',
-                origin: 'Việt Nam',
-                price: '39.000đ',
-                image: './sanpham10.jpg'
-            },
-            {
-                name: 'Xúc xíc Đức vị song khói',
-                origin: 'Việt Nam',
-                price: '65.000đ',
-                image: './sanpham11.jpg'
-            },
-            {
-                name: 'Xúc xíc viên',
-                origin: 'Việt Nam',
-                price: '45.000đ',
-                image: './sanpham12.jpg'
-            },
-            {
-                name: 'Cá viên chiên Thanh Food',
-                origin: 'Việt Nam',
-                price: '55.000đ',
-                image: './sanpham13.jpg'
-            },
-            {
-                name: 'Thanh cua',
-                origin: 'Thanh Food',
-                price: '59.000đ',
-                oldPrice: '69.000đ',
-                image: './sanpham14.jpg'
-            },
-            {
-                name: 'Phô Mai Viên',
-                origin: 'Việt Nam',
-                price: '39.000đ',
-                image: './sanpham15.jpg'
-            }
-        ];
-
+        // Render sản phẩm mới
         const newProductsContainer = document.getElementById('newProducts');
-        newProducts.forEach((product, index) => {
-            const card = document.createElement('div');
-            card.className = `product-card fade-in-up stagger-${(index % 4) + 1}`;
-            card.style.cursor = 'pointer';
-            card.onclick = () => window.location.href = 'product-detail.html';
-            card.innerHTML = `
-                <div class="relative">
-                    ${product.discount ? `<div class="badge">${product.discount}</div>` : ''}
-                    <img src="${product.image}" alt="${product.name}">
-                </div>
-                <div class="p-4">
-                    <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">${product.name}</h3>
-                    <p class="text-xs text-gray-500 mb-2">Xuất xứ: ${product.origin}</p>
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="price-new">${product.price}</span>
-                        ${product.oldPrice ? `<span class="price-old">${product.oldPrice}</span>` : ''}
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation()">
-                            <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            `;
-            newProductsContainer.appendChild(card);
-        });
+        newProductsContainer.innerHTML = productsData.new.map((product, index) => createNewProductCard(product, index)).join('');
 
-        // News
+        // News data
         const news = [
             {
                 title: 'Cách chế biến cá viên đúng chuẩn vị ngon',
@@ -1431,9 +1106,6 @@
 
         function showSlide(index) {
             slideContainer.style.backgroundImage = `url(${slides[index]})`;
-            slideContainer.style.backgroundSize = 'cover';
-            slideContainer.style.backgroundPosition = 'center';
-            slideContainer.style.transition = 'background-image 0.5s ease';
         }
 
         function nextSlide() {
@@ -1444,19 +1116,8 @@
         showSlide(0);
         setInterval(nextSlide, 4000);
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+        // Lưu dữ liệu sản phẩm vào localStorage để product-detail.html có thể truy cập
+        localStorage.setItem('productsData', JSON.stringify(productsData));
     </script>
-
-
-
-
-</body></html>
+</body>
+</html>

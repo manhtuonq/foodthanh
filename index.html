@@ -4,1143 +4,1268 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1400, initial-scale=0.5, user-scalable=yes">
     <title>Thanh Food - Cá Viên Đông Lạnh</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --green-dark: #1a6b3c;
+            --green-mid: #2d9653;
+            --green-light: #4dc97c;
+            --green-pale: #e6f7ed;
+            --teal-dark: #0e6b72;
+            --teal-mid: #15a8b3;
+            --teal-light: #4dd4df;
+            --teal-pale: #e0f7f9;
+            --ocean-dark: #0a4a72;
+            --ocean-mid: #1275b8;
+            --ocean-light: #4faee8;
+            --cream: #f4fbf6;
+            --white: #ffffff;
+            --gray-soft: #f0f6f4;
+            --text-dark: #133226;
+            --text-mid: #2d5a42;
+            --text-light: #6a9e7e;
+            --red-accent: #e85555;
+            --yellow-accent: #f5c842;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(180deg, #e8f4f8 0%, #ffffff 100%);
+            font-family: 'Nunito', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
             overflow-x: hidden;
             min-width: 1400px;
         }
 
-        .ocean-wave-bg {
-            background: linear-gradient(135deg, #7CB655 0%, #3CAFAF 100%);
-        }
-
-        .ocean-wave-bg::before {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            right: 0;
-            height: 40px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%23ffffff' fill-opacity='0.3' d='M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
-            background-size: 1440px 40px;
-            animation: wave 15s linear infinite;
-        }
-
-        @keyframes wave {
-            0% { background-position: 0 0; }
-            100% { background-position: 1440px 0; }
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .featured-section {
-            background: linear-gradient(135deg, #3CAFAF 0%, #1D4981 100%);
-            border-radius: 20px;
-            padding: 40px;
-            color: white;
-            box-shadow: 0 10px 40px rgba(60, 175, 175, 0.3);
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 20px;
+        /* ============ WAVE SVG ============ */
+        .wave-divider {
+            line-height: 0;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            cursor: pointer;
         }
+        .wave-divider svg { display: block; }
 
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(28, 168, 221, 0.25);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .badge {
-            background: #3CAFAF;
-        }
-
-        .hot-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-weight: 700;
+        /* ============ TOP BAR ============ */
+        .topbar {
+            background: linear-gradient(90deg, var(--green-dark) 0%, var(--teal-dark) 100%);
+            padding: 10px 0;
             font-size: 13px;
-            z-index: 10;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            color: rgba(255,255,255,0.92);
         }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #3CAFAF 0%, #1D4981 100%);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            box-shadow: 0 5px 20px rgba(28, 168, 221, 0.3);
+        .topbar .container {
+            max-width: 1400px; margin: 0 auto; padding: 0 40px;
+            display: flex; justify-content: space-between; align-items: center;
         }
+        .topbar a { color: rgba(255,255,255,0.85); text-decoration: none; }
+        .topbar a:hover { color: var(--yellow-accent); }
+        .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; }
+        .topbar-right span { display: flex; align-items: center; gap: 6px; }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(28, 168, 221, 0.5);
+        /* ============ HEADER ============ */
+        header {
+            background: var(--white);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 24px rgba(21, 168, 179, 0.12);
+            border-bottom: 3px solid var(--green-light);
         }
-
-        .btn-contact {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .header-inner {
+            max-width: 1400px; margin: 0 auto; padding: 0 40px;
+            display: flex; align-items: center; gap: 28px;
+            height: 90px;
         }
+        .logo img { height: 72px; object-fit: contain; }
 
-        .btn-contact:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.5);
+        .search-wrap {
+            flex: 1;
+            position: relative;
         }
-
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #e8f7fc 0%, #d1eef7 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            border: 3px solid #3CAFAF;
-        }
-
-        .category-item:hover .category-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(135deg, #3CAFAF 0%, #1D4981 100%);
-        }
-
-        .slide-banner {
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .menu-sidebar {
-            background: white;
-            border-radius: 30px;
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .menu-item {
-            padding: 15px 20px;
-            border-radius: 12px;
-            margin-bottom: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .menu-item:hover {
-            background: linear-gradient(135deg, #3CAFAF 0%, #1D4981 100%);
-            color: white;
-            transform: translateX(10px);
-        }
-
-        .partner-logo {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 140px;
-        }
-
-        .partner-logo:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(28, 168, 221, 0.2);
-        }
-
-        .news-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-        }
-
-        .news-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(28, 168, 221, 0.25);
-        }
-
-        .news-card img {
+        .search-wrap input {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            padding: 14px 130px 14px 22px;
+            border-radius: 50px;
+            border: 2.5px solid #c5e8d4;
+            background: var(--green-pale);
+            font-size: 15px;
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+        .search-wrap input:focus {
+            outline: none;
+            border-color: var(--green-mid);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(45, 150, 83, 0.12);
+        }
+        .search-wrap input::placeholder { color: var(--text-light); }
+        .search-wrap button {
+            position: absolute; right: 6px; top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, var(--green-mid), var(--teal-mid));
+            color: #fff; border: none;
+            padding: 10px 24px; border-radius: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700; font-size: 14px;
+            cursor: pointer; transition: all 0.3s;
+        }
+        .search-wrap button:hover {
+            transform: translateY(-50%) scale(1.04);
+            box-shadow: 0 4px 16px rgba(45,150,83,0.35);
+        }
+
+        .header-badges { display: flex; align-items: center; gap: 14px; }
+        .h-badge {
+            display: flex; align-items: center; gap: 10px;
+            background: var(--gray-soft);
+            border-radius: 14px; padding: 10px 16px;
+            border: 1.5px solid #d4efe0;
+        }
+        .h-badge-icon {
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+        .h-badge-icon.red { background: #fff0f0; color: var(--red-accent); }
+        .h-badge-icon.yellow { background: #fffbea; color: #d4a00e; }
+        .h-badge small { display: block; color: var(--text-light); font-size: 11px; }
+        .h-badge strong { font-size: 13px; font-weight: 800; color: var(--text-dark); }
+        .h-badge .delivery { color: var(--green-mid); }
+
+        .btn-call {
+            background: linear-gradient(135deg, var(--red-accent), #c73b3b);
+            color: white; border: none; cursor: pointer;
+            padding: 12px 24px; border-radius: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800; font-size: 15px;
+            display: flex; align-items: center; gap: 8px;
+            box-shadow: 0 4px 16px rgba(232,85,85,0.35);
+            transition: all 0.3s; white-space: nowrap;
+        }
+        .btn-call:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(232,85,85,0.5);
+        }
+
+        /* ============ NAV BAR ============ */
+        .navbar {
+            background: linear-gradient(90deg, var(--green-dark) 0%, var(--teal-dark) 60%, var(--ocean-dark) 100%);
+            position: relative; overflow: hidden;
+        }
+        .navbar::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .navbar-inner {
+            max-width: 1400px; margin: 0 auto; padding: 0 40px;
+            display: flex; align-items: center; gap: 6px; position: relative;
+        }
+        .nav-item {
+            color: rgba(255,255,255,0.9);
+            padding: 15px 18px;
+            font-weight: 700; font-size: 14px;
+            cursor: pointer; display: flex; align-items: center; gap: 8px;
+            transition: all 0.3s; border-radius: 8px; white-space: nowrap;
+            text-decoration: none;
+        }
+        .nav-item:hover, .nav-item.active {
+            background: rgba(255,255,255,0.18);
+            color: var(--yellow-accent);
+        }
+        .nav-item i { font-size: 15px; }
+        .nav-hotline {
+            margin-left: auto;
+            color: var(--yellow-accent);
+            font-weight: 800; font-size: 15px;
+            display: flex; align-items: center; gap: 8px;
+            animation: pulse-yellow 2s infinite;
+        }
+        @keyframes pulse-yellow {
+            0%,100% { text-shadow: 0 0 0 transparent; }
+            50% { text-shadow: 0 0 12px rgba(245,200,66,0.6); }
+        }
+
+        /* ============ HERO SECTION ============ */
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+        .hero {
+            padding: 40px 0 0;
+            background: linear-gradient(180deg, #e8f7ef 0%, var(--cream) 100%);
+        }
+        .hero-grid {
+            display: grid; grid-template-columns: 280px 1fr;
+            gap: 24px; align-items: start;
+        }
+
+        /* Sidebar */
+        .sidebar-menu {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(21,168,100,0.1);
+            border: 1.5px solid #d4efe0;
+        }
+        .sidebar-title {
+            background: linear-gradient(135deg, var(--green-dark), var(--teal-dark));
+            color: #fff; padding: 18px 20px;
+            font-family: 'Baloo 2', cursive;
+            font-weight: 700; font-size: 16px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .sidebar-item {
+            padding: 13px 20px;
+            display: flex; align-items: center; gap: 12px;
+            font-weight: 600; font-size: 14px;
+            cursor: pointer; transition: all 0.25s;
+            border-bottom: 1px solid #f0f8f4;
+            color: var(--text-mid);
+        }
+        .sidebar-item:last-child { border-bottom: none; }
+        .sidebar-item i {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            background: var(--green-pale);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--green-mid); font-size: 15px;
+            transition: all 0.25s;
+            flex-shrink: 0;
+        }
+        .sidebar-item:hover {
+            background: linear-gradient(90deg, var(--green-pale), transparent);
+            color: var(--green-dark);
+            transform: translateX(6px);
+        }
+        .sidebar-item:hover i {
+            background: var(--green-mid);
+            color: #fff;
+        }
+
+        /* Slideshow */
+        .slideshow {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            height: 460px;
+            box-shadow: 0 8px 40px rgba(21,100,50,0.18);
+        }
+        .slide {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+            opacity: 0; transition: opacity 0.7s ease;
+        }
+        .slide.active { opacity: 1; }
+        .slide-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(120deg, rgba(15,80,40,0.6) 0%, transparent 60%);
+        }
+        .slide-content {
+            position: absolute; bottom: 40px; left: 40px;
+            color: #fff; max-width: 400px;
+        }
+        .slide-tag {
+            background: var(--yellow-accent);
+            color: var(--text-dark);
+            display: inline-block;
+            padding: 4px 14px; border-radius: 50px;
+            font-size: 12px; font-weight: 800; margin-bottom: 10px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .slide-content h2 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 32px; font-weight: 800;
+            line-height: 1.2; margin-bottom: 8px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+        .slide-content p { font-size: 14px; opacity: 0.9; }
+        .slide-dots {
+            position: absolute; bottom: 20px; right: 24px;
+            display: flex; gap: 8px;
+        }
+        .dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer; transition: all 0.3s;
+        }
+        .dot.active { background: #fff; width: 26px; border-radius: 5px; }
+        .slide-arrows { position: absolute; bottom: 12px; left: 40px; display: flex; gap: 8px; }
+        .slide-arrow {
+            width: 36px; height: 36px;
+            border-radius: 50%; background: rgba(255,255,255,0.25);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #fff; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.3s; font-size: 13px;
+        }
+        .slide-arrow:hover { background: rgba(255,255,255,0.45); }
+
+        /* ============ WAVE BETWEEN SECTIONS ============ */
+        .wave-green {
+            background: var(--green-pale);
+            position: relative;
+        }
+
+        /* ============ BANNERS ROW ============ */
+        .banners-row {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 20px; padding: 28px 0 0;
+        }
+        .banner-item {
+            border-radius: 20px; overflow: hidden;
+            position: relative; height: 200px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .banner-item img {
+            width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.5s ease;
         }
-
-        .news-card:hover img {
-            transform: scale(1.08);
+        .banner-item:hover img { transform: scale(1.06); }
+        .banner-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to right, rgba(10,80,40,0.5), transparent);
+            display: flex; align-items: center; padding: 24px;
+        }
+        .banner-label {
+            color: #fff; font-family: 'Baloo 2', cursive;
+            font-weight: 800; font-size: 22px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        footer {
-            background: linear-gradient(135deg, #1D4981 0%, #0e3a61 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
+        /* ============ SECTION TITLE ============ */
+        .section-title {
+            text-align: center; margin-bottom: 40px;
         }
-
-        footer::before {
+        .section-title .tag {
+            display: inline-block;
+            background: var(--green-pale);
+            color: var(--green-dark);
+            border: 1.5px solid #a8ddbf;
+            padding: 5px 18px; border-radius: 50px;
+            font-size: 13px; font-weight: 700; margin-bottom: 12px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .section-title h2 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 36px; font-weight: 800;
+            color: var(--green-dark);
+            position: relative; display: inline-block;
+        }
+        .section-title h2::after {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background-size: 100% 60px;
+            position: absolute; left: 50%; transform: translateX(-50%);
+            bottom: -8px; width: 60px; height: 4px;
+            background: linear-gradient(90deg, var(--green-light), var(--teal-light));
+            border-radius: 2px;
+        }
+        .section-title p {
+            margin-top: 18px; color: var(--text-light);
+            font-size: 15px;
         }
 
-        .search-box {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
+        /* ============ FEATURED SECTION ============ */
+        .featured-section {
+            padding: 70px 0;
         }
-
-        .search-box input {
-            width: 100%;
-            padding: 16px 60px 16px 24px;
-            border-radius: 50px;
-            border: 2px solid #e0e0e0;
-            font-size: 16px;
-            transition: all 0.3s ease;
+        .featured-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 24px;
         }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: #3CAFAF;
-            box-shadow: 0 5px 20px rgba(28, 168, 221, 0.2);
-        }
-
-        .search-box button {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(135deg, #3CAFAF 0%, #1D4981 100%);
-            border: none;
-            padding: 12px 24px;
-            border-radius: 50px;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .search-box button:hover {
-            transform: translateY(-50%) scale(1.05);
-            box-shadow: 0 5px 15px rgba(28, 168, 221, 0.4);
-        }
-
-        .info-badge {
-            background: white;
+        .product-card {
+            background: #fff;
             border-radius: 20px;
-            padding: 20px 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .info-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(28, 168, 221, 0.2);
-        }
-
-        .price-old {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 16px;
-        }
-
-        .price-new {
-            color: #ee5a6f;
-            font-weight: 700;
-            font-size: 22px;
-        }
-
-        .pagination-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ddd;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(21,100,60,0.1);
+            border: 1.5px solid #e0f2e9;
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
             cursor: pointer;
-            transition: all 0.3s ease;
+            display: flex; flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(21,150,80,0.2);
+            border-color: var(--green-light);
+        }
+        .product-img-wrap {
+            position: relative; overflow: hidden; height: 260px;
+        }
+        .product-img-wrap img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .product-card:hover .product-img-wrap img { transform: scale(1.08); }
+        .product-badge {
+            position: absolute; top: 14px; right: 14px;
+            background: linear-gradient(135deg, #e85555, #c73b3b);
+            color: #fff; padding: 5px 14px;
+            border-radius: 50px; font-size: 12px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            box-shadow: 0 4px 14px rgba(232,85,85,0.4);
+        }
+        .product-origin {
+            position: absolute; bottom: 12px; left: 12px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50px; padding: 4px 12px;
+            font-size: 12px; font-weight: 700; color: var(--green-dark);
+            display: flex; align-items: center; gap: 5px;
+        }
+        .product-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+        .product-body h3 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 20px; font-weight: 700;
+            color: var(--text-dark); margin-bottom: 8px;
+        }
+        .product-meta {
+            display: flex; gap: 16px; margin-bottom: 14px;
+        }
+        .meta-item {
+            display: flex; align-items: center; gap: 5px;
+            font-size: 12px; color: var(--text-light);
+        }
+        .meta-item i { color: var(--teal-mid); }
+        .price-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .price-new { font-size: 20px; font-weight: 800; color: var(--green-dark); }
+        .price-old { font-size: 14px; color: #bbb; text-decoration: line-through; }
+        .sold-tag { font-size: 12px; color: var(--text-light); margin-left: auto; }
+        .product-actions { display: flex; gap: 10px; margin-top: auto; }
+        .btn-detail {
+            flex: 1;
+            background: linear-gradient(135deg, var(--green-mid), var(--teal-mid));
+            color: #fff; border: none; cursor: pointer;
+            padding: 12px 20px; border-radius: 12px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700; font-size: 14px;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            transition: all 0.3s;
+        }
+        .btn-detail:hover { box-shadow: 0 6px 20px rgba(45,150,83,0.4); transform: translateY(-1px); }
+        .btn-zalo {
+            background: #0068FF; color: #fff; border: none; cursor: pointer;
+            padding: 12px 16px; border-radius: 12px;
+            font-weight: 700; font-size: 13px;
+            display: flex; align-items: center; gap: 6px;
+            transition: all 0.3s;
+        }
+        .btn-zalo:hover { background: #0055cc; }
+
+        /* ============ CATEGORIES ============ */
+        .categories-section {
+            padding: 70px 0;
+            background: linear-gradient(180deg, var(--green-pale) 0%, var(--teal-pale) 100%);
+            position: relative; overflow: hidden;
+        }
+        .categories-section::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q25 0 50 10 Q75 20 100 10 L100 20 L0 20Z' fill='%2315a8b3' fill-opacity='0.05'/%3E%3C/svg%3E") repeat-x;
+            background-size: 200px 40px; animation: wave-anim 8s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes wave-anim {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 200px; }
+        }
+        .cat-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        .cat-item {
+            background: #fff; border-radius: 20px;
+            padding: 28px 16px; text-align: center;
+            cursor: pointer; transition: all 0.4s;
+            box-shadow: 0 4px 16px rgba(21,100,60,0.08);
+            border: 2px solid transparent;
+        }
+        .cat-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--green-light);
+            box-shadow: 0 12px 36px rgba(21,150,80,0.18);
+        }
+        .cat-icon {
+            width: 70px; height: 70px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--green-pale), var(--teal-pale));
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 28px;
+            border: 2.5px solid #c5e8d4;
+            transition: all 0.4s;
+        }
+        .cat-item:hover .cat-icon {
+            background: linear-gradient(135deg, var(--green-mid), var(--teal-mid));
+            border-color: transparent;
+            transform: rotate(10deg) scale(1.1);
+        }
+        .cat-item:hover .cat-icon i { color: #fff !important; }
+        .cat-icon i { font-size: 28px; color: var(--green-mid); transition: color 0.4s; }
+        .cat-name { font-weight: 700; font-size: 14px; color: var(--text-mid); }
+
+        /* ============ NEW PRODUCTS ============ */
+        .new-products-section {
+            padding: 70px 0;
+            background: #fff;
+        }
+        .new-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+        .new-card {
+            background: #fff; border-radius: 16px;
+            overflow: hidden; cursor: pointer;
+            border: 1.5px solid #e8f4ec;
+            box-shadow: 0 3px 14px rgba(21,100,60,0.08);
+            transition: all 0.4s;
+        }
+        .new-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(21,150,80,0.18);
+            border-color: var(--green-light);
+        }
+        .new-img {
+            width: 100%; height: 180px; object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .new-card:hover .new-img { transform: scale(1.08); }
+        .new-img-wrap { overflow: hidden; position: relative; }
+        .new-tag {
+            position: absolute; top: 10px; left: 10px;
+            background: var(--green-mid); color: #fff;
+            font-size: 10px; font-weight: 800; padding: 3px 10px;
+            border-radius: 50px; text-transform: uppercase;
+        }
+        .new-body { padding: 14px; }
+        .new-body h4 {
+            font-weight: 700; font-size: 13px;
+            color: var(--text-dark); margin-bottom: 6px;
+            height: 36px; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+        }
+        .new-origin { font-size: 11px; color: var(--text-light); margin-bottom: 8px; }
+        .new-price { font-size: 14px; font-weight: 800; color: var(--green-dark); margin-bottom: 10px; }
+        .new-btn {
+            width: 100%; background: var(--green-pale); color: var(--green-dark);
+            border: 1.5px solid #a8ddbf; cursor: pointer;
+            padding: 8px; border-radius: 8px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700; font-size: 12px;
+            transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 6px;
+        }
+        .new-btn:hover {
+            background: linear-gradient(135deg, var(--green-mid), var(--teal-mid));
+            color: #fff; border-color: transparent;
         }
 
-        .pagination-dot.active {
-            background: #3CAFAF;
-            width: 32px;
-            border-radius: 6px;
+        /* ============ FULL BANNER ============ */
+        .full-banner {
+            margin: 0 0 0;
+            position: relative; height: 320px; overflow: hidden;
+        }
+        .full-banner img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .full-banner-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to right, rgba(10,60,30,0.7) 0%, rgba(10,60,30,0.2) 60%, transparent 100%);
+            display: flex; align-items: center; padding: 0 80px;
+        }
+        .full-banner-text h3 {
+            font-family: 'Baloo 2', cursive;
+            color: #fff; font-size: 48px; font-weight: 800;
+            line-height: 1.1; margin-bottom: 10px;
+        }
+        .full-banner-text .highlight {
+            color: var(--yellow-accent);
+        }
+        .full-banner-text .price-tag {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--yellow-accent); color: var(--text-dark);
+            padding: 10px 24px; border-radius: 50px;
+            font-size: 22px; font-weight: 900;
+            box-shadow: 0 6px 24px rgba(245,200,66,0.5);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ============ NEWS ============ */
+        .news-section {
+            padding: 70px 0;
+            background: linear-gradient(180deg, #e8f7ef 0%, #f4fbf6 100%);
+        }
+        .news-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .news-card {
+            background: #fff; border-radius: 20px;
+            overflow: hidden; cursor: pointer;
+            box-shadow: 0 4px 18px rgba(21,100,60,0.1);
+            transition: all 0.4s; border: 1.5px solid #e0f2e9;
+        }
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 40px rgba(21,150,80,0.2);
+        }
+        .news-img-wrap { overflow: hidden; height: 200px; }
+        .news-img-wrap img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .news-card:hover .news-img-wrap img { transform: scale(1.08); }
+        .news-body { padding: 22px; }
+        .news-date {
+            font-size: 12px; color: var(--text-light);
+            display: flex; align-items: center; gap: 5px; margin-bottom: 10px;
+        }
+        .news-body h3 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 18px; font-weight: 700;
+            color: var(--text-dark); margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .news-body p { font-size: 13px; color: var(--text-light); margin-bottom: 14px; }
+        .news-read {
+            color: var(--green-mid); font-weight: 700; font-size: 13px;
+            text-decoration: none; display: flex; align-items: center; gap: 5px;
+            transition: gap 0.3s;
+        }
+        .news-card:hover .news-read { gap: 10px; }
+
+        /* ============ TRUST BADGES ============ */
+        .trust-section {
+            padding: 50px 0;
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--teal-dark) 50%, var(--ocean-dark) 100%);
+            position: relative; overflow: hidden;
+        }
+        .trust-section::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(77,201,124,0.15) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 50%, rgba(79,173,232,0.15) 0%, transparent 60%);
+        }
+        .trust-grid {
+            display: grid; grid-template-columns: repeat(4,1fr);
+            gap: 24px; position: relative;
+        }
+        .trust-item {
+            text-align: center; color: #fff; padding: 30px 20px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px; border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        .trust-item:hover { background: rgba(255,255,255,0.14); transform: translateY(-4px); }
+        .trust-item i { font-size: 36px; margin-bottom: 14px; color: var(--yellow-accent); }
+        .trust-item h4 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 18px; font-weight: 700; margin-bottom: 8px;
+        }
+        .trust-item p { font-size: 13px; opacity: 0.8; }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: linear-gradient(180deg, #0e3a20 0%, #091f12 100%);
+            color: #fff; position: relative; overflow: hidden;
+        }
+        .footer-wave { margin-bottom: -2px; }
+        .footer-inner {
+            padding: 60px 0 30px;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 48px; margin-bottom: 48px;
+        }
+        .footer-brand img { height: 60px; margin-bottom: 16px; filter: brightness(0) invert(1); }
+        .footer-brand p { font-size: 13px; opacity: 0.75; line-height: 1.7; margin-bottom: 20px; }
+        .footer-socials { display: flex; gap: 10px; }
+        .social-btn {
+            width: 38px; height: 38px; border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 16px; text-decoration: none;
+            transition: all 0.3s;
+        }
+        .social-btn:hover { background: var(--green-mid); border-color: var(--green-mid); transform: translateY(-3px); }
+        .footer-col h4 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 17px; font-weight: 700;
+            margin-bottom: 18px; color: var(--yellow-accent);
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.75); text-decoration: none;
+            font-size: 13px; display: flex; align-items: center; gap: 8px;
+            transition: all 0.3s;
+        }
+        .footer-col ul li a:hover { color: var(--green-light); transform: translateX(4px); }
+        .footer-col ul li a i { font-size: 11px; color: var(--green-light); }
+        .footer-contact li {
+            display: flex; align-items: flex-start; gap: 10px;
+            font-size: 13px; color: rgba(255,255,255,0.75);
+            margin-bottom: 12px;
+        }
+        .footer-contact li i { color: var(--green-light); margin-top: 2px; flex-shrink: 0; }
+        .footer-payments h4 {
+            font-family: 'Baloo 2', cursive; font-size: 15px;
+            font-weight: 700; margin-bottom: 12px; color: rgba(255,255,255,0.9);
+        }
+        .payment-icons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+        .pay-icon {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px; padding: 8px 14px;
+            font-size: 12px; font-weight: 700; color: #fff;
+            display: flex; align-items: center; gap: 5px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px; text-align: center;
+            font-size: 13px; opacity: 0.6;
         }
 
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-
-        .social-float-bar {
-            position: fixed;
-            right: 20px;
-            top: 50%;
+        /* ============ FLOAT BUTTONS ============ */
+        .float-bar {
+            position: fixed; right: 22px; top: 50%;
             transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+            z-index: 1000; display: flex;
+            flex-direction: column; gap: 12px;
         }
+        .float-btn {
+            width: 52px; height: 52px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; color: #fff;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            transition: all 0.3s; cursor: pointer;
+            text-decoration: none; position: relative;
+        }
+        .float-btn:hover { transform: scale(1.15); box-shadow: 0 8px 28px rgba(0,0,0,0.3); }
+        .float-btn.zalo { background: linear-gradient(135deg, #0068FF, #0052cc); }
+        .float-btn.mess { background: linear-gradient(135deg, #00B2FF, #006AFF); }
+        .float-btn.tiktok { background: linear-gradient(135deg, #111, #333); }
+        .float-btn .tooltip {
+            position: absolute; right: 64px;
+            background: #333; color: #fff;
+            padding: 5px 12px; border-radius: 8px;
+            font-size: 12px; font-weight: 600;
+            white-space: nowrap; opacity: 0;
+            pointer-events: none; transition: opacity 0.3s;
+        }
+        .float-btn:hover .tooltip { opacity: 1; }
 
-        .social-float-btn {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        .fade-up { animation: fadeUp 0.6s ease both; }
+        .d1 { animation-delay: 0.1s; }
+        .d2 { animation-delay: 0.2s; }
+        .d3 { animation-delay: 0.3s; }
+        .d4 { animation-delay: 0.4s; }
 
-        .social-float-btn:hover {
-            transform: scale(1.15);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        /* Back to top */
+        .back-top {
+            position: fixed; bottom: 30px; right: 22px;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--green-mid), var(--teal-mid));
+            color: #fff; display: flex; align-items: center; justify-content: center;
+            font-size: 18px; cursor: pointer; z-index: 999;
+            box-shadow: 0 4px 16px rgba(45,150,83,0.4);
+            transition: all 0.3s; text-decoration: none;
         }
-
-        .social-zalo {
-            background: linear-gradient(135deg, #0068FF 0%, #0180F7 100%);
-        }
-
-        .social-messenger {
-            background: linear-gradient(135deg, #00B2FF 0%, #006AFF 100%);
-        }
-
-        .social-tiktok {
-            background: linear-gradient(135deg, #000000 0%, #2B2B2B 100%);
-        }
+        .back-top:hover { transform: translateY(-4px); }
     </style>
 </head>
-
 <body>
-    <!-- Social Float Buttons -->
-    <div class="social-float-bar">
-        <a href="https://zalo.me/0908881122" target="_blank" class="social-float-btn social-zalo" title="Chat Zalo">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.855 1.371 5.404 3.511 7.123L4.5 22l3.916-1.738c1.122.447 2.344.738 3.584.738 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm4.5 11.5h-9v-1h9v1zm0-2.5h-9v-1h9v1zm0-2.5h-9v-1h9v1z"></path>
-            </svg>
-        </a>
 
-        <a href="https://m.me/VOTRE_PAGE_FB" target="_blank" class="social-float-btn social-messenger" title="Chat Messenger">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.477 2 2 6.145 2 11.588c0 2.996 1.494 5.668 3.833 7.417v4.495l4.33-2.376c1.155.316 2.378.476 3.837.476 5.523 0 10-4.145 10-9.588S17.523 2 12 2zm1.029 12.888l-2.559-2.73-4.997 2.73 5.496-5.834 2.623 2.73 4.933-2.73-5.496 5.834z"></path>
-            </svg>
-        </a>
+<!-- Float Buttons -->
+<div class="float-bar">
+    <a href="https://zalo.me/0908881122" target="_blank" class="float-btn zalo" title="Chat Zalo">
+        <i class="fa-solid fa-comment-dots"></i>
+        <span class="tooltip">Chat Zalo</span>
+    </a>
+    <a href="https://m.me/YOURPAGE" target="_blank" class="float-btn mess">
+        <i class="fa-brands fa-facebook-messenger"></i>
+        <span class="tooltip">Messenger</span>
+    </a>
+    <a href="https://tiktok.com/@youraccount" target="_blank" class="float-btn tiktok">
+        <i class="fa-brands fa-tiktok"></i>
+        <span class="tooltip">TikTok</span>
+    </a>
+</div>
+<a href="#" class="back-top"><i class="fa-solid fa-chevron-up"></i></a>
 
-        <a href="https://www.tiktok.com/@VOTRE_COMPTE" target="_blank" class="social-float-btn social-tiktok" title="TikTok">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"></path>
-            </svg>
-        </a>
+<!-- Top Bar -->
+<div class="topbar">
+    <div class="container">
+        <div class="topbar-left">
+            <span><i class="fa-solid fa-location-dot"></i> 51 Lương Văn Năm, Phú Tài, TP. Phan Thiết, Bình Thuận</span>
+        </div>
+        <div class="topbar-right">
+            <span><i class="fa-solid fa-envelope"></i> thanhfood@gmail.com</span>
+            <span>|</span>
+            <a href="#"><i class="fa-solid fa-heart"></i> Yêu thích</a>
+            <span>|</span>
+            <a href="#"><i class="fa-solid fa-store"></i> Hệ thống cửa hàng</a>
+        </div>
     </div>
+</div>
 
-    <!-- Top Bar -->
-    <div class="ocean-wave-bg py-3">
-        <div class="container">
-            <div class="flex justify-between items-center text-white text-sm">
-                <div class="flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>51 Lương Văn Năm, Phú Tài, Thành phố Phan Thiết, Bình Thuận 77100, Việt Nam</span>
+<!-- Header -->
+<header>
+    <div class="header-inner">
+        <div class="logo">
+            <img src="logo.jpg" alt="Thanh Food">
+        </div>
+
+        <div class="search-wrap">
+            <input type="text" placeholder="🔍  Tìm kiếm sản phẩm: tôm, cua, cá viên...">
+            <button><i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm</button>
+        </div>
+
+        <div class="header-badges">
+            <div class="h-badge">
+                <div class="h-badge-icon red"><i class="fa-regular fa-clock"></i></div>
+                <div>
+                    <small>Thời gian làm việc</small>
+                    <strong>8h – 21h</strong>
+                    <small>Thứ 2 – Chủ Nhật</small>
                 </div>
-                <div class="flex items-center gap-6">
-                    <div class="flex items-center gap-2">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                        </svg>
-                        <span>thanhfood@gmail.com</span>
+            </div>
+            <div class="h-badge">
+                <div class="h-badge-icon yellow"><i class="fa-solid fa-truck-fast"></i></div>
+                <div>
+                    <small>Tốc độ nhanh chóng</small>
+                    <strong class="delivery">≤ Giao Hàng 2H</strong>
+                </div>
+            </div>
+            <button class="btn-call">
+                <i class="fa-solid fa-phone"></i> 0908 881 122
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="navbar-inner">
+        <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> Trang chủ</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-circle-info"></i> Giới thiệu</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-fish"></i> Hải sản đông lạnh</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-drumstick-bite"></i> Thịt đông lạnh</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-hotdog"></i> Xúc xích & Chả</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-cheese"></i> Phô mai & Bơ</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-newspaper"></i> Cẩm nang</a>
+        <a href="#" class="nav-item"><i class="fa-solid fa-phone-volume"></i> Liên hệ</a>
+        <div class="nav-hotline"><i class="fa-solid fa-headset"></i> Hotline: 0908 881 122</div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <!-- Sidebar -->
+            <div class="sidebar-menu">
+                <div class="sidebar-title">
+                    <i class="fa-solid fa-bars-staggered"></i> Danh mục sản phẩm
+                </div>
+                <div class="sidebar-item"><i class="fa-solid fa-shrimp"></i> Tôm chiên các loại</div>
+                <div class="sidebar-item"><i class="fa-solid fa-crab"></i> Thanh Cua</div>
+                <div class="sidebar-item"><i class="fa-solid fa-fish"></i> Cá Viên Chiên</div>
+                <div class="sidebar-item"><i class="fa-solid fa-hotdog"></i> Xúc xích Đức</div>
+                <div class="sidebar-item"><i class="fa-solid fa-cheese"></i> Phô mai que</div>
+                <div class="sidebar-item"><i class="fa-solid fa-circle-dot"></i> Bò viên</div>
+                <div class="sidebar-item"><i class="fa-solid fa-fish-fins"></i> Tôm viên</div>
+                <div class="sidebar-item"><i class="fa-solid fa-drumstick-bite"></i> Gia cầm đông lạnh</div>
+                <div class="sidebar-item"><i class="fa-solid fa-box-open"></i> Combo tiết kiệm</div>
+            </div>
+
+            <!-- Slideshow -->
+            <div class="slideshow">
+                <div class="slide active" id="slide0" style="background-image: url('./banner.jpg')">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <span class="slide-tag">⭐ Thanh Food Phan Thiết</span>
+                        <h2>Thực phẩm đông lạnh<br>chất lượng cao</h2>
+                        <p>Giao hàng nhanh trong 2 giờ – Tươi ngon đảm bảo</p>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <span>❤️ Yêu thích</span>
-                        <span>|</span>
-                        <span>Hệ thống cửa hàng</span>
+                </div>
+                <div class="slide" id="slide1" style="background-image: url('./banner_cavien 2.jpg')">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <span class="slide-tag">🐟 Cá Viên Thanh Food</span>
+                        <h2>Cá viên chiên<br>giòn tan thơm ngon</h2>
+                        <p>Sản xuất từ cá tươi, đảm bảo vệ sinh an toàn thực phẩm</p>
                     </div>
+                </div>
+                <div class="slide" id="slide2" style="background-image: url('./banner_xúc xích.jpg')">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <span class="slide-tag">🌭 Xúc Xích Đức</span>
+                        <h2>Xúc xích khói Đức<br>nhập khẩu chính hãng</h2>
+                        <p>Hương vị chuẩn Âu, phù hợp cho gia đình Việt</p>
+                    </div>
+                </div>
+                <div class="slide-dots">
+                    <div class="dot active" onclick="goSlide(0)"></div>
+                    <div class="dot" onclick="goSlide(1)"></div>
+                    <div class="dot" onclick="goSlide(2)"></div>
+                </div>
+                <div class="slide-arrows">
+                    <div class="slide-arrow" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></div>
+                    <div class="slide-arrow" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mini Banners -->
+        <div class="banners-row">
+            <div class="banner-item">
+                <img src="changa.jpg" alt="Chân gà">
+                <div class="banner-overlay">
+                    <div class="banner-label"><i class="fa-solid fa-fire-flame-curved"></i> Chân Gà Đông Lạnh</div>
+                </div>
+            </div>
+            <div class="banner-item">
+                <img src="canhga.jpg" alt="Cánh gà">
+                <div class="banner-overlay">
+                    <div class="banner-label"><i class="fa-solid fa-star"></i> Cánh Gà Crisspy</div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Header -->
-    <header class="bg-white py-6 shadow-sm">
-        <div class="container">
-            <div class="flex items-center justify-between gap-8">
-                <!-- Logo -->
-                <div class="flex items-center gap-3">
-                    <img src="logo.jpg" alt="Ocean Logo" class="h-28 w-auto object-contain">
-                </div>
+<!-- Wave Divider -->
+<div class="wave-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" fill="var(--cream)">
+        <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60Z"></path>
+    </svg>
+</div>
 
-                <!-- Search Box -->
-                <div class="search-box flex-1">
-                    <input type="text" placeholder="Tôm cua...">
-                    <button>Tìm kiếm</button>
-                </div>
+<!-- Featured Products -->
+<section class="featured-section">
+    <div class="container">
+        <div class="section-title fade-up">
+            <div class="tag"><i class="fa-solid fa-star"></i> Bán chạy nhất</div>
+            <h2>Sản Phẩm Nổi Bật</h2>
+            <p>Những sản phẩm được yêu thích nhất tại Thanh Food Phan Thiết</p>
+        </div>
+        <div class="featured-grid" id="featuredGrid"></div>
+    </div>
+</section>
 
-                <!-- Info Badges -->
-                <div class="flex items-center gap-4">
-                    <div class="info-badge">
-                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-500">Thời gian làm việc</div>
-                            <div class="font-bold text-sm">8h - 21h</div>
-                            <div class="text-xs text-gray-500">(Từ thứ 2 - Chủ Nhật)</div>
-                        </div>
-                    </div>
-                    <div class="info-badge">
-                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
-                                <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-500">Tốc độ nhanh chóng</div>
-                            <div class="font-bold text-yellow-600">≤ Giao Hàng 2H</div>
-                        </div>
-                    </div>
-                    <button class="btn-contact">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                        </svg>
-                        Liên hệ ngay
-                    </button>
-                </div>
+<!-- Wave Divider Green -->
+<div class="wave-divider" style="background: var(--featured-bg, #fff);">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" fill="#e6f7ed">
+        <path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60Z"></path>
+    </svg>
+</div>
+
+<!-- Categories -->
+<section class="categories-section">
+    <div class="container">
+        <div class="section-title fade-up">
+            <div class="tag"><i class="fa-solid fa-layer-group"></i> Khám phá</div>
+            <h2>Danh Mục Sản Phẩm</h2>
+            <p>Đa dạng sản phẩm chất lượng cao cho bữa ăn gia đình</p>
+        </div>
+        <div class="cat-grid">
+            <div class="cat-item fade-up d1">
+                <div class="cat-icon"><i class="fa-solid fa-fish" style="color:var(--teal-mid)"></i></div>
+                <div class="cat-name">Hải sản đông lạnh</div>
+            </div>
+            <div class="cat-item fade-up d2">
+                <div class="cat-icon"><i class="fa-solid fa-leaf" style="color:var(--green-mid)"></i></div>
+                <div class="cat-name">100% Tươi sống</div>
+            </div>
+            <div class="cat-item fade-up d3">
+                <div class="cat-icon"><i class="fa-solid fa-globe" style="color:var(--ocean-mid)"></i></div>
+                <div class="cat-name">Thực phẩm nhập khẩu</div>
+            </div>
+            <div class="cat-item fade-up d4">
+                <div class="cat-icon"><i class="fa-solid fa-circle-dot" style="color:var(--teal-mid)"></i></div>
+                <div class="cat-name">Cá viên & Tôm viên</div>
+            </div>
+            <div class="cat-item fade-up d1">
+                <div class="cat-icon"><i class="fa-solid fa-hotdog" style="color:var(--green-mid)"></i></div>
+                <div class="cat-name">Xúc xích & Chả</div>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Slideshow & Menu Section -->
-        <section class="py-8">
-            <div class="container">
-                <div class="grid grid-cols-12 gap-6">
-                    <!-- Sidebar Menu -->
-                    <div class="col-span-3">
-                        <div class="menu-sidebar">
-                            <h3 class="text-xl font-bold mb-4 text-gray-800">
-                                <span class="mr-2">☰</span>Danh mục sản phẩm
-                            </h3>
-                            <div class="menu-item">🦐 Tôm chiên các loại</div>
-                            <div class="menu-item">🦀 Thanh Cua</div>
-                            <div class="menu-item">🐟 Cá Viên Chiên</div>
-                            <div class="menu-item">🌭 Xúc xích Đức</div>
-                            <div class="menu-item">🧀 Phô mai que</div>
-                            <div class="menu-item">🥩 Bò viên</div>
-                            <div class="menu-item">🍤 Tôm viên</div>
-                              
-                        </div>
-                    </div>
+<!-- Wave Divider -->
+<div class="wave-divider" style="background:#e6f7ed;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" fill="#fff">
+        <path d="M0,40 C480,0 960,60 1440,20 L1440,60 L0,60Z"></path>
+    </svg>
+</div>
 
-                    <!-- Main Slideshow -->
-                    <div class="col-span-9">
-                        <div class="slide-banner">
-                            <div id="mainSlide" class="relative h-[520px]" style="background-image: url('./banner.jpg'); background-size: cover; background-position: center; transition: background-image 0.5s;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- New Products -->
+<section class="new-products-section">
+    <div class="container">
+        <div class="section-title fade-up">
+            <div class="tag"><i class="fa-solid fa-bolt"></i> Mới về</div>
+            <h2>Sản Phẩm Mới Về</h2>
+            <p>Cập nhật hàng mới liên tục, tươi ngon mỗi ngày</p>
+        </div>
+        <div class="new-grid" id="newGrid"></div>
+    </div>
+</section>
+
+<!-- Full Width Banner -->
+<div class="full-banner">
+    <img src="banner 4.jpg" alt="Đại tiệc thực phẩm">
+    <div class="full-banner-overlay">
+        <div class="full-banner-text">
+            <h3>ĐẠI TIỆC THỰC PHẨM</h3>
+            <h3 class="highlight">Thanh Food Phan Thiết</h3>
+            <div style="margin-top:16px;">
+                <span class="price-tag">
+                    <i class="fa-solid fa-tags"></i> CHỈ CÒN <strong>489K</strong>/Lô
+                </span>
             </div>
-        </section>
+        </div>
+    </div>
+</div>
 
-        <!-- Banner Row -->
-        <section class="py-8">
-            <div class="container">
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="slide-banner fade-in-up stagger-1">
-                        <img src="changa.jpg" alt="Cua Tôm" class="w-full h-52 object-cover">
-                    </div>
-                    <div class="slide-banner fade-in-up stagger-2">
-                        <img src="canhga.jpg" alt="Ghẹ Xanh" class="w-full h-52 object-cover">
-                    </div>
-                </div>
+<!-- Trust Section -->
+<section class="trust-section">
+    <div class="container">
+        <div class="trust-grid">
+            <div class="trust-item fade-up d1">
+                <i class="fa-solid fa-award"></i>
+                <h4>Chất Lượng Đảm Bảo</h4>
+                <p>Sản phẩm được kiểm tra chất lượng nghiêm ngặt trước khi đến tay khách hàng</p>
             </div>
-        </section>
-
-        <!-- Featured Products Section -->
-        <section class="py-12">
-            <div class="container">
-                <div class="featured-section fade-in-up">
-                    <div class="flex items-center justify-between mb-8">
-                        <div class="flex items-center gap-6">
-                            <div class="text-5xl font-black">⭐ SẢN PHẨM NỔI BẬT</div>
-                        </div>
-                    </div>
-
-                    <!-- Products Grid -->
-                    <div class="grid grid-cols-2 gap-6" id="featuredProducts"></div>
-
-                    <!-- Pagination -->
-                    <div class="flex justify-center gap-3 mt-8">
-                        <div class="pagination-dot active"></div>
-                        <div class="pagination-dot"></div>
-                        <div class="pagination-dot"></div>
-                        <div class="pagination-dot"></div>
-                        <div class="pagination-dot"></div>
-                    </div>
-                </div>
+            <div class="trust-item fade-up d2">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4>Giao Hàng Nhanh 2H</h4>
+                <p>Giao hàng tận nơi trong vòng 2 giờ, đảm bảo sản phẩm luôn tươi ngon</p>
             </div>
-        </section>
-
-        <!-- Product Categories -->
-        <section class="py-12">
-            <div class="container">
-                <h2 class="text-4xl font-bold text-center mb-12">Danh mục sản phẩm</h2>
-                <div class="grid grid-cols-5 gap-8">
-                    <div class="category-item text-center cursor-pointer fade-in-up stagger-1">
-                        <div class="category-icon">
-                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
-                            </svg>
-                        </div>
-                        <div class="font-semibold text-gray-800">Hải sản đông lạnh</div>
-                    </div>
-                    <div class="category-item text-center cursor-pointer fade-in-up stagger-2">
-                        <div class="category-icon">
-                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6z"></path>
-                            </svg>
-                        </div>
-                        <div class="font-semibold text-gray-800">100% tươi sống</div>
-                    </div>
-                    <div class="category-item text-center cursor-pointer fade-in-up stagger-3">
-                        <div class="category-icon">
-                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3z"></path>
-                            </svg>
-                        </div>
-                        <div class="font-semibold text-gray-800">Thực phẩm nhập khẩu</div>
-                    </div>
-                    <div class="category-item text-center cursor-pointer fade-in-up stagger-4">
-                        <div class="category-icon">
-                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <div class="font-semibold text-gray-800">Cá viên</div>
-                    </div>
-                    <div class="category-item text-center cursor-pointer fade-in-up stagger-1">
-                        <div class="category-icon">
-                            <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <div class="font-semibold text-gray-800">Xúc xích</div>
-                    </div>
-                </div>
+            <div class="trust-item fade-up d3">
+                <i class="fa-solid fa-snowflake"></i>
+                <h4>Bảo Quản Lạnh Chuẩn</h4>
+                <p>Chuỗi lạnh được duy trì từ kho đến tay bạn, giữ nguyên độ tươi ngon</p>
             </div>
-        </section>
-
-        <!-- New Arrivals -->
-        <section class="py-12 bg-white">
-            <div class="container">
-                <h2 class="text-4xl font-bold text-center mb-12">Sản Phẩm mới về</h2>
-                <div class="grid grid-cols-5 gap-6" id="newProducts"></div>
+            <div class="trust-item fade-up d4">
+                <i class="fa-solid fa-headset"></i>
+                <h4>Hỗ Trợ 24/7</h4>
+                <p>Đội ngũ tư vấn nhiệt tình, sẵn sàng hỗ trợ bạn mọi lúc mọi nơi</p>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- Full Width Banner -->
-        <section class="py-12">
-            <div class="container px-0">
-                <div class="relative h-80 overflow-hidden rounded-3xl">
-                    <img src="banner 4.jpg" alt="Banner" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center">
-                        <div class="text-white px-20">
-                            <h3 class="text-5xl font-black mb-4">ĐẠI TIỆC THỰC PHẨM</h3>
-                            <h4 class="text-6xl font-black text-yellow-400 mb-6">Thanh Food Phan Thiết</h4>
-                            <div class="text-3xl font-bold">CHỈ CÒN <span class="text-yellow-400 text-5xl">489K</span>/Lô</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- News -->
+<section class="news-section">
+    <div class="container">
+        <div class="section-title fade-up">
+            <div class="tag"><i class="fa-solid fa-book-open"></i> Khám phá</div>
+            <h2>Cẩm Nang Ẩm Thực</h2>
+            <p>Bí quyết nấu ăn ngon từ đội ngũ chuyên gia của Thanh Food</p>
+        </div>
+        <div class="news-grid" id="newsGrid"></div>
+    </div>
+</section>
 
-        <!-- News Section -->
-        <section class="py-12">
-            <div class="container">
-                <h2 class="text-4xl font-bold text-center mb-12">Cẩm nang ẩm thực</h2>
-                <div class="grid grid-cols-3 gap-8" id="newsSection"></div>
-            </div>
-        </section>
+<!-- Wave for Footer -->
+<div class="wave-divider" style="background:var(--news-bg, #e8f7ef);">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" fill="#0e3a20">
+        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,20 1440,30 L1440,80 L0,80Z"></path>
+    </svg>
+</div>
 
-      
-    </main>
-
-    <!-- Footer -->
-    <footer class="pt-32 pb-8">
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
         <div class="container">
-            <div class="grid grid-cols-4 gap-12 mb-12">
-                <div>
-                    <h3 class="text-xl font-bold mb-6">Thông tin công ty</h3>
-                    <p class="mb-3 text-sm opacity-90">Mã số thuế: 0123456789</p>
-                    <p class="mb-3 text-sm opacity-90">Phan thiết - Thanh Food</p>
-                    <p class="mb-3 flex items-start gap-2 text-sm opacity-90">
-                        <svg class="w-4 h-4 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                        </svg>
-                        Thành phố Phan Thiết, Bình Thuận, Việt Nam
-                    </p>
-                    <p class="mb-3 flex items-center gap-2 text-sm opacity-90">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                        </svg>
-                        0908881122
-                    </p>
-                    <p class="flex items-center gap-2 text-sm opacity-90">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                        </svg>
-                        vinasofware@gmail.vn
-                    </p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.jpg" alt="Thanh Food">
+                    <p>Thanh Food Phan Thiết – Chuyên cung cấp thực phẩm đông lạnh chất lượng cao. Chúng tôi cam kết mang đến những sản phẩm tươi ngon, an toàn cho bữa ăn gia đình bạn.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
 
-                <div>
-                    <h3 class="text-xl font-bold mb-6">Về chúng tôi</h3>
-                    <ul class="space-y-3 text-sm opacity-90">
-                        <li><a href="#" class="hover:text-yellow-300 transition">Trang chủ</a></li>
-                        <li><a href="#" class="hover:text-yellow-300 transition">Giới thiệu</a></li>
-                        <li><a href="#" class="hover:text-yellow-300 transition">Sản phẩm</a></li>
-                        <li><a href="#" class="hover:text-yellow-300 transition">Cẩm nang ẩm thực</a></li>
-                        <li><a href="#" class="hover:text-yellow-300 transition">Liên hệ</a></li>
+                <div class="footer-col">
+                    <h4>Về Chúng Tôi</h4>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Trang chủ</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Giới thiệu</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Sản phẩm</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Cẩm nang ẩm thực</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Liên hệ</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h3 class="text-xl font-bold mb-6">Chính sách</h3>
-                    <ul class="space-y-3 text-sm opacity-90">
-                        <li><a href="#" class="hover:text-yellow-300 transition">Chính sách đổi trả</a></li>
-                        <li><a href="#" class="hover:text-yellow-300 transition">Chính sách mua hàng</a></li>
-                        <li><a href="#" class="hover:text-yellow-300 transition">Chính sách bán hàng</a></li>
-                        <li><a href="#" class="hover:text-yellow-300 transition">Chính sách giao hàng</a></li>
-                        <li><a href="#" class="hover:text-yellow-300 transition">Bảo mật thông tin cá nhân</a></li>
+                <div class="footer-col">
+                    <h4>Chính Sách</h4>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Chính sách đổi trả</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Chính sách mua hàng</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Chính sách bán hàng</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Chính sách giao hàng</a></li>
+                        <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Bảo mật thông tin</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h3 class="text-xl font-bold mb-6">Hình thức thanh toán</h3>
-                    <div class="grid grid-cols-2 gap-3 mb-6">
-                        <div class="bg-white/20 p-3 rounded-lg flex items-center justify-center">
-                            <span class="text-2xl">💵</span>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-location-dot"></i> 51 Lương Văn Năm, Phú Tài, TP. Phan Thiết, Bình Thuận</li>
+                        <li><i class="fa-solid fa-phone"></i> 0908 881 122</li>
+                        <li><i class="fa-solid fa-envelope"></i> thanhfood@gmail.com</li>
+                        <li><i class="fa-regular fa-clock"></i> 8h – 21h (Thứ 2 – CN)</li>
+                    </ul>
+                    <div class="footer-payments">
+                        <h4>Thanh Toán</h4>
+                        <div class="payment-icons">
+                            <div class="pay-icon"><i class="fa-solid fa-money-bill"></i> Tiền mặt</div>
+                            <div class="pay-icon"><i class="fa-solid fa-credit-card"></i> Thẻ</div>
+                            <div class="pay-icon">VISA</div>
+                            <div class="pay-icon">MOMO</div>
                         </div>
-                        <div class="bg-white/20 p-3 rounded-lg flex items-center justify-center">
-                            <span class="text-2xl">💳</span>
-                        </div>
-                        <div class="bg-white/20 p-3 rounded-lg flex items-center justify-center">
-                            <span class="text-sm font-bold">VISA</span>
-                        </div>
-                        <div class="bg-white/20 p-3 rounded-lg flex items-center justify-center">
-                            <span class="text-sm font-bold">MOMO</span>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Liên kết mạng xã hội</h3>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"></path>
-                            </svg>
-                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-white/20 pt-6 text-center text-sm opacity-75">
-                <p>© 2026 Ocean Theme - Cá Viên Chiên Chất Lượng. Thiết kế bởi VNS(vinasoftware)</p>
+            <div class="footer-bottom">
+                <p>© 2026 Thanh Food Phan Thiết – Thiết kế bởi <strong>VNS (VinaSoftware)</strong> | Mã số thuế: 0123456789</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-        // Product data - Dữ liệu sản phẩm với ID duy nhất
-        const productsData = {
-            featured: [
-                {
-                    id: 'ca-hoi-phi-le',
-                    name: 'Hồ lô',
-                    origin: 'Phan Thiet',
-                    price: 'Liên hệ zalo qua zalo',
-                    sold: 147,
-                    image: './ho lo.jpg',
-                    hot: true,
-                    discount: '-16%',
-                    description: 'Cá hồi phi lê tươi nguyên con được chọn lọc kỹ càng từ những nguồn cá hồi chất lượng cao nhất.',
-                    weight: '1kg - 1.5kg/con',
-                    shelf_life: '6 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'thanh-pho-mai',
-                    name: 'Thanh Phô Mai',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo qua zalo',
-                    sold: 162,
-                    image: './phomaique.jpg',
-                    hot: true,
-                    discount: '-17%',
-                    description: 'Thanh phô mai thơm ngon, béo ngậy, chất lượng cao.',
-                    weight: '500g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn mát tủ lạnh 0-4°C'
-                }
-            ],
-            new: [
-                {
-                    id: 'xuc-xich-duc-1',
-                    name: 'Xúc xíc Đức vị song khói',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham1.jpg',
-                    description: 'Xúc xích Đức vị song khói thơm ngon đặc biệt.',
-                    weight: '250g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'xuc-xich-vien-1',
-                    name: 'Xúc xíc viên',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham2.jpg',
-                    description: 'Xúc xích viên tròn đều, thơm ngon.',
-                    weight: '200g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'ca-vien-chien',
-                    name: 'Cá viên chiên Thanh Food',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham3.jpg',
-                    description: 'Cá viên chiên giòn tan, thơm ngon.',
-                    weight: '300g/gói',
-                    shelf_life: '4 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'thanh-cua-1',
-                    name: 'Thanh cua',
-                    origin: 'Thanh Food',
-                    price: 'Liên hệ zalo',
-                    oldPrice: '69.000đ',
-                    image: './sanpham4.jpg',
-                    description: 'Thanh cua thơm ngon, chất lượng cao.',
-                    weight: '250g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'pho-mai-vien-1',
-                    name: 'Phô Mai Viên',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham5.jpg',
-                    description: 'Phô mai viên béo ngậy thơm ngon.',
-                    weight: '200g/gói',
-                    shelf_life: '2 tháng',
-                    storage: 'Ngăn mát tủ lạnh 0-4°C'
-                },
-                {
-                    id: 'xuc-xich-duc-2',
-                    name: 'Bò Viên',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham6.jpg',
-                    description: 'Xúc xích Đức vị song khói thơm ngon đặc biệt.',
-                    weight: '250g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'xuc-xich-vien-2',
-                    name: 'Viên chả cá vị tôm',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham7.jpg',
-                    description: 'Xúc xích viên tròn đều, thơm ngon.',
-                    weight: '200g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'nem-ran',
-                    name: 'Tôm chiên',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham8.jpg',
-                    description: 'Nem ran giòn rụm, thơm ngon.',
-                    weight: '300g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'thanh-cua-2',
-                    name: 'Tôm viên',
-                    origin: 'Thanh Food',
-                    price: 'Liên hệ zalo',
-                    oldPrice: '69.000đ',
-                    image: './sanpham9.jpg',
-                    description: 'Thanh cua thơm ngon, chất lượng cao.',
-                    weight: '250g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'pho-mai-vien-2',
-                    name: 'Viên chả cá vị tôm',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham10.jpg',
-                    description: 'Phô mai viên béo ngậy thơm ngon.',
-                    weight: '200g/gói',
-                    shelf_life: '2 tháng',
-                    storage: 'Ngăn mát tủ lạnh 0-4°C'
-                },
-                {
-                    id: 'xuc-xich-duc-3',
-                    name: 'Chả giò',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham11.jpg',
-                    description: 'Xúc xích Đức vị song khói thơm ngon đặc biệt.',
-                    weight: '250g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'xuc-xich-vien-3',
-                    name: 'Đậu hũ phô mai',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham12.jpg',
-                    description: 'Xúc xích viên tròn đều, thơm ngon.',
-                    weight: '200g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'ca-vien-chien-2',
-                    name: 'chả giò rế',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham13.jpg',
-                    description: 'Cá viên chiên giòn tan, thơm ngon.',
-                    weight: '300g/gói',
-                    shelf_life: '4 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'thanh-cua-3',
-                    name: 'Hải sản tẩm bột',
-                    origin: 'Thanh Food',
-                    price: 'Liên hệ zalo',
-                    oldPrice: '69.000đ',
-                    image: './sanpham14.jpg',
-                    description: 'Thanh cua thơm ngon, chất lượng cao.',
-                    weight: '250g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'pho-mai-vien-3',
-                    name: 'Bò viên ',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './sanpham15.jpg',
-                    description: 'Phô mai viên béo ngậy thơm ngon.',
-                    weight: '200g/gói',
-                    shelf_life: '2 tháng',
-                    storage: 'Ngăn mát tủ lạnh 0-4°C'
-                },
-                {
-                    id: 'xuc-xich-vien-3',
-                    name: 'Cánh gà đông lạnh',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './canhga1.jpg',
-                    description: 'Xúc xích viên tròn đều, thơm ngon.',
-                    weight: '200g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'ca-vien-chien-2',
-                    name: 'Chân gà đông lạnh',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './changa1.jpg',
-                    description: 'Cá viên chiên giòn tan, thơm ngon.',
-                    weight: '300g/gói',
-                    shelf_life: '4 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'thanh-cua-3',
-                    name: 'Đùi gà đông lạnh',
-                    origin: 'Thanh Food',
-                    price: 'Liên hệ zalo',
-                    oldPrice: '69.000đ',
-                    image: './duiga.jpg',
-                    description: 'Thanh cua thơm ngon, chất lượng cao.',
-                    weight: '250g/gói',
-                    shelf_life: '3 tháng',
-                    storage: 'Ngăn đá tủ lạnh -18°C'
-                },
-                {
-                    id: 'pho-mai-vien-3',
-                    name: 'Giò Heo ',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './gioheo.jpg',
-                    description: 'Phô mai viên béo ngậy thơm ngon.',
-                    weight: '200g/gói',
-                    shelf_life: '2 tháng',
-                    storage: 'Ngăn mát tủ lạnh 0-4°C'
-                },
-                {
-                    id: 'pho-mai-vien-3',
-                    name: 'Đùi Gà',
-                    origin: 'Việt Nam',
-                    price: 'Liên hệ zalo',
-                    image: './duiga.jpg',
-                    description: 'Phô mai viên béo ngậy thơm ngon.',
-                    weight: '200g/gói',
-                    shelf_life: '2 tháng',
-                    storage: 'Ngăn mát tủ lạnh 0-4°C'
-                }
-            ]
-        };
+<script>
+// ===== SLIDESHOW =====
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let current = 0, timer;
 
-        // Hàm tạo URL với product ID
-        function getProductDetailUrl(productId) {
-            return `product-detail.html?id=${productId}`;
-        }
+function goSlide(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    resetTimer();
+}
+function nextSlide() { goSlide(current + 1); }
+function prevSlide() { goSlide(current - 1); }
+function resetTimer() { clearInterval(timer); timer = setInterval(() => goSlide(current + 1), 4500); }
+resetTimer();
 
-        // Hàm tạo HTML cho sản phẩm nổi bật
-        function createFeaturedProductCard(product) {
-            return `
-                <div class="product-card fade-in-up" onclick="window.location.href='${getProductDetailUrl(product.id)}'">
-                    <div class="relative">
-                        ${product.hot ? '<div class="hot-badge">BÁN CHẠY</div>' : ''}
-                        <img src="${product.image}" alt="${product.name}">
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-bold text-lg mb-2 text-gray-800">${product.name}</h3>
-                        <p class="text-sm text-gray-500 mb-3">Xuất xứ: ${product.origin}</p>
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="price-new">${product.price}</span>
-                            ${product.oldPrice ? `<span class="price-old">${product.oldPrice}</span>` : ''}
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">Đã bán ${product.sold}</span>
-                            <button class="btn-primary" onclick="event.stopPropagation(); window.location.href='${getProductDetailUrl(product.id)}'">Xem Chi Tiết</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
+// ===== PRODUCT DATA =====
+const productsData = {
+    featured: [
+        { id: 'ca-hoi-phi-le', name: 'Hồ Lô Đông Lạnh', origin: 'Phan Thiết', price: 'Liên hệ Zalo', sold: 147, image: './ho lo.jpg', hot: true, weight: '1kg - 1.5kg/con', shelf_life: '6 tháng', storage: 'Ngăn đá -18°C' },
+        { id: 'thanh-pho-mai', name: 'Thanh Phô Mai', origin: 'Việt Nam', price: 'Liên hệ Zalo', sold: 162, image: './phomaique.jpg', hot: true, weight: '500g/gói', shelf_life: '3 tháng', storage: 'Ngăn mát 0-4°C' }
+    ],
+    new: [
+        { id: 'xuc-xich-duc-1', name: 'Xúc xích Đức vị song khói', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham1.jpg' },
+        { id: 'xuc-xich-vien-1', name: 'Xúc xích viên', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham2.jpg' },
+        { id: 'ca-vien-chien', name: 'Cá viên chiên Thanh Food', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham3.jpg' },
+        { id: 'thanh-cua-1', name: 'Thanh cua', origin: 'Thanh Food', price: 'Liên hệ Zalo', image: './sanpham4.jpg' },
+        { id: 'pho-mai-vien-1', name: 'Phô Mai Viên', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham5.jpg' },
+        { id: 'bo-vien', name: 'Bò Viên', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham6.jpg' },
+        { id: 'vien-ca-tom', name: 'Viên chả cá vị tôm', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham7.jpg' },
+        { id: 'tom-chien', name: 'Tôm chiên', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham8.jpg' },
+        { id: 'tom-vien', name: 'Tôm viên', origin: 'Thanh Food', price: 'Liên hệ Zalo', image: './sanpham9.jpg' },
+        { id: 'vien-ca-tom-2', name: 'Viên chả cá vị tôm #2', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham10.jpg' },
+        { id: 'cha-gio', name: 'Chả giò', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham11.jpg' },
+        { id: 'dau-hu-pho-mai', name: 'Đậu hũ phô mai', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham12.jpg' },
+        { id: 'cha-gio-re', name: 'Chả giò rế', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham13.jpg' },
+        { id: 'hai-san-tam-bot', name: 'Hải sản tẩm bột', origin: 'Thanh Food', price: 'Liên hệ Zalo', image: './sanpham14.jpg' },
+        { id: 'bo-vien-2', name: 'Bò viên tươi', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './sanpham15.jpg' },
+        { id: 'canh-ga', name: 'Cánh gà đông lạnh', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './canhga1.jpg' },
+        { id: 'chan-ga', name: 'Chân gà đông lạnh', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './changa1.jpg' },
+        { id: 'dui-ga', name: 'Đùi gà đông lạnh', origin: 'Thanh Food', price: 'Liên hệ Zalo', image: './duiga.jpg' },
+        { id: 'gio-heo', name: 'Giò Heo', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './gioheo.jpg' },
+        { id: 'dui-ga-2', name: 'Đùi Gà', origin: 'Việt Nam', price: 'Liên hệ Zalo', image: './duiga.jpg' }
+    ]
+};
 
-        // Hàm tạo HTML cho sản phẩm mới
-        function createNewProductCard(product, index) {
-            return `
-                <div class="product-card fade-in-up stagger-${(index % 4) + 1}" onclick="window.location.href='${getProductDetailUrl(product.id)}'">
-                    <div class="relative">
-                        <img src="${product.image}" alt="${product.name}">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-semibold text-base mb-2 text-gray-800 h-12 overflow-hidden">${product.name}</h3>
-                        <p class="text-xs text-gray-500 mb-2">Xuất xứ: ${product.origin}</p>
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="price-new">${product.price}</span>
-                            ${product.oldPrice ? `<span class="price-old">${product.oldPrice}</span>` : ''}
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="flex-1 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg text-sm font-semibold transition" onclick="event.stopPropagation(); window.location.href='${getProductDetailUrl(product.id)}'">
-                                <svg class="w-5 h-5 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
+// Render Featured
+const fg = document.getElementById('featuredGrid');
+fg.innerHTML = productsData.featured.map(p => `
+    <div class="product-card fade-up" onclick="window.location.href='product-detail.html?id=${p.id}'">
+        <div class="product-img-wrap">
+            ${p.hot ? '<div class="product-badge"><i class="fa-solid fa-fire"></i> Bán Chạy</div>' : ''}
+            <img src="${p.image}" alt="${p.name}">
+            <div class="product-origin"><i class="fa-solid fa-map-pin"></i> ${p.origin}</div>
+        </div>
+        <div class="product-body">
+            <h3>${p.name}</h3>
+            <div class="product-meta">
+                <div class="meta-item"><i class="fa-solid fa-weight-hanging"></i> ${p.weight || 'Liên hệ'}</div>
+                <div class="meta-item"><i class="fa-solid fa-snowflake"></i> ${p.storage || 'Ngăn đá'}</div>
+            </div>
+            <div class="price-row">
+                <span class="price-new">${p.price}</span>
+                <span class="sold-tag"><i class="fa-solid fa-bag-shopping"></i> Đã bán ${p.sold || 0}</span>
+            </div>
+            <div class="product-actions">
+                <button class="btn-detail" onclick="event.stopPropagation(); window.location.href='product-detail.html?id=${p.id}'">
+                    <i class="fa-solid fa-eye"></i> Xem Chi Tiết
+                </button>
+                <a href="https://zalo.me/0908881122" class="btn-zalo" target="_blank" onclick="event.stopPropagation()">
+                    <i class="fa-solid fa-comment-dots"></i> Zalo
+                </a>
+            </div>
+        </div>
+    </div>
+`).join('');
 
-        // Render sản phẩm nổi bật
-        const featuredContainer = document.getElementById('featuredProducts');
-        featuredContainer.innerHTML = productsData.featured.map(product => createFeaturedProductCard(product)).join('');
+// Render New Products
+const ng = document.getElementById('newGrid');
+ng.innerHTML = productsData.new.map((p, i) => `
+    <div class="new-card fade-up d${(i%4)+1}" onclick="window.location.href='product-detail.html?id=${p.id}'">
+        <div class="new-img-wrap">
+            <img class="new-img" src="${p.image}" alt="${p.name}">
+            <div class="new-tag"><i class="fa-solid fa-bolt"></i> Mới</div>
+        </div>
+        <div class="new-body">
+            <h4>${p.name}</h4>
+            <div class="new-origin"><i class="fa-solid fa-map-pin"></i> ${p.origin}</div>
+            <div class="new-price">${p.price}</div>
+            <button class="new-btn" onclick="event.stopPropagation(); window.location.href='product-detail.html?id=${p.id}'">
+                <i class="fa-solid fa-eye"></i> Xem chi tiết
+            </button>
+        </div>
+    </div>
+`).join('');
 
-        // Render sản phẩm mới
-        const newProductsContainer = document.getElementById('newProducts');
-        newProductsContainer.innerHTML = productsData.new.map((product, index) => createNewProductCard(product, index)).join('');
-
-        // News data
-        const news = [
-    {
-        id: 'cach-che-bien-ca-vien',
-        title: 'Cách chế biến cá viên đúng chuẩn vị ngon',
-        date: '15/02/2025',
-        excerpt: 'Chúng ta sẽ bắt đầu ngăm nước sao cho cá viên tưới ngon, để ráo nước...',
-        image: './sanpham6.jpg'
-    },
-    {
-        id: 'tom-hum-nova-scotia',
-        title: 'Tôm hùm Nova Scotia Canada: lợi ích sức khỏe',
-        date: '15/02/2025',
-        excerpt: 'Thành phần dinh dưỡng của tôm hùm Nova Scotia Canada Tôm hùm Nova Scot...',
-        image: './sanpham7.jpg'
-    },
-    {
-        id: 'vem-xanh-nuong-mo-hanh',
-        title: 'Chi Tiết Công Thức Vẹm Xanh Nướng Mỡ Hành',
-        date: '10/12/2024',
-        excerpt: 'Các nguyên liệu cần chuẩn bị Vẹm nướng mỡ hành là sự kết hợp hoàn hảo giữa...',
-        image: './sanpham8.jpg'
-    },
+// News Data
+const newsData = [
+    { id: 'cach-che-bien-ca-vien', title: 'Cách chế biến cá viên đúng chuẩn vị ngon', date: '15/02/2025', excerpt: 'Bí quyết để cá viên giữ được độ giòn, thơm ngon sau khi chiên chuẩn...', image: './sanpham6.jpg' },
+    { id: 'tom-hum-nova-scotia', title: 'Tôm hùm Nova Scotia Canada: lợi ích sức khỏe', date: '15/02/2025', excerpt: 'Thành phần dinh dưỡng phong phú của tôm hùm Nova Scotia Canada...', image: './sanpham7.jpg' },
+    { id: 'vem-xanh-nuong-mo-hanh', title: 'Chi tiết công thức Vẹm Xanh Nướng Mỡ Hành', date: '10/12/2024', excerpt: 'Vẹm nướng mỡ hành là sự kết hợp hoàn hảo, thơm ngon hấp dẫn...', image: './sanpham8.jpg' }
 ];
-
-const newsContainer = document.getElementById('newsSection');
-news.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.className = `news-card fade-in-up stagger-${index + 1}`;
-    card.style.cursor = 'pointer';
-    card.onclick = () => window.location.href = `tin-tuc.html?id=${item.id}`;
-    card.innerHTML = `
-        <div class="overflow-hidden">
-            <img src="${item.image}" alt="${item.title}">
+const newsGrid = document.getElementById('newsGrid');
+newsGrid.innerHTML = newsData.map((n, i) => `
+    <div class="news-card fade-up d${i+1}" onclick="window.location.href='tin-tuc.html?id=${n.id}'">
+        <div class="news-img-wrap"><img src="${n.image}" alt="${n.title}"></div>
+        <div class="news-body">
+            <div class="news-date"><i class="fa-regular fa-calendar"></i> ${n.date}</div>
+            <h3>${n.title}</h3>
+            <p>${n.excerpt}</p>
+            <a href="tin-tuc.html?id=${n.id}" class="news-read" onclick="event.stopPropagation()">
+                Đọc thêm <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
-        <div class="p-6">
-            <div class="text-sm text-gray-500 mb-3">📅 ${item.date}</div>
-            <h3 class="font-bold text-lg mb-3 text-gray-800">${item.title}</h3>
-            <p class="text-gray-600 text-sm mb-4">${item.excerpt}</p>
-            <a href="tin-tuc.html?id=${item.id}" class="text-cyan-600 font-semibold text-sm hover:text-cyan-700 transition" onclick="event.stopPropagation()">Đọc thêm →</a>
-        </div>
-    `;
-    newsContainer.appendChild(card);
-});
-        // Slideshow
-        const slides = [
-            './banner.jpg',
-            './banner_cavien 2.jpg',
-            './banner_xúc xích.jpg'
-        ];
+    </div>
+`).join('');
 
-        let currentSlide = 0;
-        const slideContainer = document.getElementById('mainSlide');
-
-        function showSlide(index) {
-            slideContainer.style.backgroundImage = `url(${slides[index]})`;
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        showSlide(0);
-        setInterval(nextSlide, 4000);
-
-        // Lưu dữ liệu sản phẩm vào localStorage để product-detail.html có thể truy cập
-        localStorage.setItem('productsData', JSON.stringify(productsData));
-    </script>
+localStorage.setItem('productsData', JSON.stringify(productsData));
+</script>
 </body>
 </html>

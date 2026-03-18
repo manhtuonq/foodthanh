@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+ 
     <style>
         :root {
             --green-dark: #1a6b3c;
@@ -31,9 +31,9 @@
             --red-accent: #e85555;
             --yellow-accent: #f5c842;
         }
-
+ 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
         body {
             font-family: 'Nunito', sans-serif;
             background: var(--cream);
@@ -41,14 +41,14 @@
             overflow-x: hidden;
             min-width: 1400px;
         }
-
+ 
         /* ============ WAVE SVG ============ */
         .wave-divider {
             line-height: 0;
             overflow: hidden;
         }
         .wave-divider svg { display: block; }
-
+ 
         /* ============ TOP BAR ============ */
         .topbar {
             background: linear-gradient(90deg, var(--green-dark) 0%, var(--teal-dark) 100%);
@@ -64,7 +64,7 @@
         .topbar a:hover { color: var(--yellow-accent); }
         .topbar-left, .topbar-right { display: flex; align-items: center; gap: 20px; }
         .topbar-right span { display: flex; align-items: center; gap: 6px; }
-
+ 
         /* ============ HEADER ============ */
         header {
             background: var(--white);
@@ -81,7 +81,7 @@
             height: 90px;
         }
         .logo img { height: 72px; object-fit: contain; }
-
+ 
         .search-wrap {
             flex: 1;
             position: relative;
@@ -118,7 +118,7 @@
             transform: translateY(-50%) scale(1.04);
             box-shadow: 0 4px 16px rgba(45,150,83,0.35);
         }
-
+ 
         .header-badges { display: flex; align-items: center; gap: 14px; }
         .h-badge {
             display: flex; align-items: center; gap: 10px;
@@ -136,7 +136,7 @@
         .h-badge small { display: block; color: var(--text-light); font-size: 11px; }
         .h-badge strong { font-size: 13px; font-weight: 800; color: var(--text-dark); }
         .h-badge .delivery { color: var(--green-mid); }
-
+ 
         .btn-call {
             background: linear-gradient(135deg, var(--red-accent), #c73b3b);
             color: white; border: none; cursor: pointer;
@@ -151,7 +151,7 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(232,85,85,0.5);
         }
-
+ 
         /* ============ NAV BAR ============ */
         .navbar {
             background: linear-gradient(90deg, var(--green-dark) 0%, var(--teal-dark) 60%, var(--ocean-dark) 100%);
@@ -190,10 +190,10 @@
             0%,100% { text-shadow: 0 0 0 transparent; }
             50% { text-shadow: 0 0 12px rgba(245,200,66,0.6); }
         }
-
+ 
         /* ============ HERO SECTION ============ */
         .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
-
+ 
         .hero {
             padding: 40px 0 0;
             background: linear-gradient(180deg, #e8f7ef 0%, var(--cream) 100%);
@@ -202,7 +202,7 @@
             display: grid; grid-template-columns: 280px 1fr;
             gap: 24px; align-items: start;
         }
-
+ 
         /* Sidebar */
         .sidebar-menu {
             background: #fff;
@@ -227,6 +227,7 @@
             color: var(--text-mid);
         }
         .sidebar-item:last-child { border-bottom: none; }
+        a.sidebar-item { text-decoration: none; color: var(--text-mid); }
         .sidebar-item i {
             width: 32px; height: 32px;
             border-radius: 8px;
@@ -245,7 +246,7 @@
             background: var(--green-mid);
             color: #fff;
         }
-
+ 
         /* Slideshow */
         .slideshow {
             border-radius: 24px;
@@ -302,13 +303,13 @@
             cursor: pointer; transition: all 0.3s; font-size: 13px;
         }
         .slide-arrow:hover { background: rgba(255,255,255,0.45); }
-
+ 
         /* ============ WAVE BETWEEN SECTIONS ============ */
         .wave-green {
             background: var(--green-pale);
             position: relative;
         }
-
+ 
         /* ============ BANNERS ROW ============ */
         .banners-row {
             display: grid; grid-template-columns: 1fr 1fr;
@@ -335,7 +336,7 @@
             font-weight: 800; font-size: 22px;
             text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
-
+ 
         /* ============ SECTION TITLE ============ */
         .section-title {
             text-align: center; margin-bottom: 40px;
@@ -366,7 +367,7 @@
             margin-top: 18px; color: var(--text-light);
             font-size: 15px;
         }
-
+ 
         /* ============ FEATURED SECTION ============ */
         .featured-section {
             padding: 70px 0;
@@ -451,7 +452,7 @@
             transition: all 0.3s;
         }
         .btn-zalo:hover { background: #0055cc; }
-
+ 
         /* ============ CATEGORIES ============ */
         .categories-section {
             padding: 70px 0;
@@ -502,7 +503,7 @@
         .cat-item:hover .cat-icon i { color: #fff !important; }
         .cat-icon i { font-size: 28px; color: var(--green-mid); transition: color 0.4s; }
         .cat-name { font-weight: 700; font-size: 14px; color: var(--text-mid); }
-
+ 
         /* ============ NEW PRODUCTS ============ */
         .new-products-section {
             padding: 70px 0;
@@ -557,7 +558,7 @@
             background: linear-gradient(135deg, var(--green-mid), var(--teal-mid));
             color: #fff; border-color: transparent;
         }
-
+ 
         /* ============ FULL BANNER ============ */
         .full-banner {
             margin: 0 0 0;
@@ -586,7 +587,7 @@
             font-size: 22px; font-weight: 900;
             box-shadow: 0 6px 24px rgba(245,200,66,0.5);
         }
-
+ 
         /* ============ NEWS ============ */
         .news-section {
             padding: 70px 0;
@@ -630,7 +631,7 @@
             transition: gap 0.3s;
         }
         .news-card:hover .news-read { gap: 10px; }
-
+ 
         /* ============ TRUST BADGES ============ */
         .trust-section {
             padding: 50px 0;
@@ -661,7 +662,7 @@
             font-size: 18px; font-weight: 700; margin-bottom: 8px;
         }
         .trust-item p { font-size: 13px; opacity: 0.8; }
-
+ 
         /* ============ FOOTER ============ */
         footer {
             background: linear-gradient(180deg, #0e3a20 0%, #091f12 100%);
@@ -724,7 +725,7 @@
             padding-top: 24px; text-align: center;
             font-size: 13px; opacity: 0.6;
         }
-
+ 
         /* ============ FLOAT BUTTONS ============ */
         .float-bar {
             position: fixed; right: 22px; top: 50%;
@@ -753,7 +754,7 @@
             pointer-events: none; transition: opacity 0.3s;
         }
         .float-btn:hover .tooltip { opacity: 1; }
-
+ 
         /* ============ ANIMATIONS ============ */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(24px); }
@@ -764,7 +765,7 @@
         .d2 { animation-delay: 0.2s; }
         .d3 { animation-delay: 0.3s; }
         .d4 { animation-delay: 0.4s; }
-
+ 
         /* Back to top */
         .back-top {
             position: fixed; bottom: 30px; right: 22px;
@@ -779,7 +780,7 @@
     </style>
 </head>
 <body>
-
+ 
 <!-- Float Buttons -->
 <div class="float-bar">
     <a href="https://zalo.me/0908881122" target="_blank" class="float-btn zalo" title="Chat Zalo">
@@ -796,7 +797,7 @@
     </a>
 </div>
 <a href="#" class="back-top"><i class="fa-solid fa-chevron-up"></i></a>
-
+ 
 <!-- Top Bar -->
 <div class="topbar">
     <div class="container">
@@ -804,7 +805,7 @@
             <span><i class="fa-solid fa-location-dot"></i> 51 Lương Văn Năm, Phú Tài, TP. Phan Thiết, Bình Thuận</span>
         </div>
         <div class="topbar-right">
-            <span><i class="fa-solid fa-envelope"></i> thanhfood@gmail.com</span>
+            <span><i class="fa-solid fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="45312d242b2d232a2a21052228242c296b262a28">[email&#160;protected]</a></span>
             <span>|</span>
             <a href="#"><i class="fa-solid fa-heart"></i> Yêu thích</a>
             <span>|</span>
@@ -812,19 +813,19 @@
         </div>
     </div>
 </div>
-
+ 
 <!-- Header -->
 <header>
     <div class="header-inner">
         <div class="logo">
             <img src="logo.jpg" alt="Thanh Food">
         </div>
-
+ 
         <div class="search-wrap">
             <input type="text" placeholder="🔍  Tìm kiếm sản phẩm: tôm, cua, cá viên...">
             <button><i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm</button>
         </div>
-
+ 
         <div class="header-badges">
             <div class="h-badge">
                 <div class="h-badge-icon red"><i class="fa-regular fa-clock"></i></div>
@@ -847,22 +848,21 @@
         </div>
     </div>
 </header>
-
+ 
 <!-- Navigation -->
 <nav class="navbar">
     <div class="navbar-inner">
-        <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> Trang chủ</a>
-        <a href="#" class="nav-item"><i class="fa-solid fa-circle-info"></i> Giới thiệu</a>
-        <a href="#" class="nav-item"><i class="fa-solid fa-fish"></i> Hải sản đông lạnh</a>
-        <a href="#" class="nav-item"><i class="fa-solid fa-drumstick-bite"></i> Thịt đông lạnh</a>
-        <a href="#" class="nav-item"><i class="fa-solid fa-hotdog"></i> Xúc xích & Chả</a>
-        <a href="#" class="nav-item"><i class="fa-solid fa-cheese"></i> Phô mai & Bơ</a>
-        <a href="#" class="nav-item"><i class="fa-solid fa-newspaper"></i> Cẩm nang</a>
+        <a href="index.html" class="nav-item active"><i class="fa-solid fa-house"></i> Trang chủ</a>
+        <a href="gioithieu.html" class="nav-item"><i class="fa-solid fa-circle-info"></i> Giới thiệu</a>
+        <a href="danh-muc.html?cat=hai-san" class="nav-item"><i class="fa-solid fa-fish"></i> Hải sản đông lạnh</a>
+        <a href="danh-muc.html?cat=thit-dong-lanh" class="nav-item"><i class="fa-solid fa-drumstick-bite"></i> Thịt đông lạnh</a>
+        <a href="danh-muc.html?cat=xuc-xich" class="nav-item"><i class="fa-solid fa-hotdog"></i> Xúc xích & Chả</a>
+        <a href="danh-muc.html?cat=pho-mai" class="nav-item"><i class="fa-solid fa-cheese"></i> Phô mai & Bơ</a>
         <a href="#" class="nav-item"><i class="fa-solid fa-phone-volume"></i> Liên hệ</a>
         <div class="nav-hotline"><i class="fa-solid fa-headset"></i> Hotline: 0908 881 122</div>
     </div>
 </nav>
-
+ 
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">
@@ -872,17 +872,16 @@
                 <div class="sidebar-title">
                     <i class="fa-solid fa-bars-staggered"></i> Danh mục sản phẩm
                 </div>
-                <div class="sidebar-item"><i class="fa-solid fa-shrimp"></i> Tôm chiên các loại</div>
-                <div class="sidebar-item"><i class="fa-solid fa-crab"></i> Thanh Cua</div>
-                <div class="sidebar-item"><i class="fa-solid fa-fish"></i> Cá Viên Chiên</div>
-                <div class="sidebar-item"><i class="fa-solid fa-hotdog"></i> Xúc xích Đức</div>
-                <div class="sidebar-item"><i class="fa-solid fa-cheese"></i> Phô mai que</div>
-                <div class="sidebar-item"><i class="fa-solid fa-circle-dot"></i> Bò viên</div>
-                <div class="sidebar-item"><i class="fa-solid fa-fish-fins"></i> Tôm viên</div>
-                <div class="sidebar-item"><i class="fa-solid fa-drumstick-bite"></i> Gia cầm đông lạnh</div>
-                <div class="sidebar-item"><i class="fa-solid fa-box-open"></i> Combo tiết kiệm</div>
+                <a href="danh-muc.html?cat=hai-san" class="sidebar-item"><i class="fa-solid fa-shrimp"></i> Tôm chiên các loại</a>
+                <a href="danh-muc.html?cat=hai-san" class="sidebar-item"><i class="fa-solid fa-crab"></i> Thanh Cua</a>
+                <a href="danh-muc.html?cat=hai-san" class="sidebar-item"><i class="fa-solid fa-fish"></i> Cá Viên Chiên</a>
+                <a href="danh-muc.html?cat=xuc-xich" class="sidebar-item"><i class="fa-solid fa-hotdog"></i> Xúc xích Đức</a>
+                <a href="danh-muc.html?cat=pho-mai" class="sidebar-item"><i class="fa-solid fa-cheese"></i> Phô mai que</a>
+                <a href="danh-muc.html?cat=vien-chien" class="sidebar-item"><i class="fa-solid fa-circle-dot"></i> Bò viên</a>
+                <a href="danh-muc.html?cat=hai-san" class="sidebar-item"><i class="fa-solid fa-fish-fins"></i> Tôm viên</a>
+                <a href="danh-muc.html?cat=thit-dong-lanh" class="sidebar-item"><i class="fa-solid fa-drumstick-bite"></i> Gia cầm đông lạnh</a>
+                <a href="danh-muc.html" class="sidebar-item"><i class="fa-solid fa-box-open"></i> Combo tiết kiệm</a>
             </div>
-
             <!-- Slideshow -->
             <div class="slideshow">
                 <div class="slide active" id="slide0" style="background-image: url('./banner.jpg')">
@@ -916,7 +915,7 @@
             <div class="banner-item">
                 <img src="canhga.jpg" alt="Cánh gà">
                 <div class="banner-overlay">
-                    <div class="banner-label"><i class="fa-solid fa-star"></i> Cánh Gà Crisspy</div>
+                    <div class="banner-label"><i class="fa-solid fa-star"></i> Cánh Gà </div>
                 </div>
             </div>
         </div>
@@ -1029,17 +1028,6 @@
     </div>
 </section>
 
-<!-- News -->
-<section class="news-section">
-    <div class="container">
-        <div class="section-title fade-up">
-            <div class="tag"><i class="fa-solid fa-book-open"></i> Khám phá</div>
-            <h2>Cẩm Nang Ẩm Thực</h2>
-            <p>Bí quyết nấu ăn ngon từ đội ngũ chuyên gia của Thanh Food</p>
-        </div>
-        <div class="news-grid" id="newsGrid"></div>
-    </div>
-</section>
 
 <!-- Wave for Footer -->
 <div class="wave-divider" style="background:var(--news-bg, #e8f7ef);">
